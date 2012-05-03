@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' >
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="/ui/css/mmrest.css">
+    <title>MMRest - Configurations</title>
+  </head>
+
+  <body>
+    <div id="container">
+	  <div id="header">
+        <img src="/ui/images/increminute_header_transparent.png" alt="MMRest logo"></img>
+    </div>  <!-- end #header -->
+	  <div id="navbar">
+	    <ul>
+		  <li><a href="devices.vm">Devices</a></li>
+		  <li><a href="configurations.vm" class="active_page">Configurations</a></li>
+		  <li><a href="acquisition.vm">Acquisition</a></li>
+		</ul>
+	  </div>  <!-- end #navbar -->
+	  <div id="sidebar">
+	  </div>  <!-- end #sidebar -->
+	  <div id="content">
+	  </div>  <!-- end #content -->
+	  </div>  <!-- end #container -->
+  </body>
+</html>

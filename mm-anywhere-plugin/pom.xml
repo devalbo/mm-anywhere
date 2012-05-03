@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mm-anywhere-plugin</groupId>
+	<artifactId>mm-anywhere-plugin</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>maven-repository.dev.java.net</id>
+			<name>Java.net Maven 1 Repository (legacy)</name>
+			<url>http://download.java.net/maven/1</url>
+			<!-- <layout>legacy</layout> -->
+		</repository>
+		<repository>
+			<id>protostuff-repo</id>
+			<name>protostuff-repo</name>
+			<url>http://protostuff.googlecode.com/svn/repos/maven2</url>
+		</repository>
+		<repository>
+			<id>protobuf-java-format</id>
+			<name>protobuf-java-format</name>
+			<url>http://protobuf-java-format.googlecode.com/svn/trunk/repo</url>
+		</repository>
+		<repository>
+			<id>repo2_maven_org</id>
+			<url>http://repo2.maven.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+<!--   <dependency> -->
+<!--   <groupId>org.apache.commons</groupId> -->
+<!--   <artifactId>commons-io</artifactId> -->
+<!--   <version>1.3.2</version> -->
+<!-- </dependency> -->
+            
+  <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.15</version>
+    <scope>provided</scope>
+    <exclusions>
+      <exclusion>
+        <groupId>javax.mail</groupId>
+        <artifactId>mail</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>javax.jms</groupId>
+        <artifactId>jms</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>com.sun.jdmk</groupId>
+        <artifactId>jmxtools</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>com.sun.jmx</groupId>
+        <artifactId>jmxri</artifactId>
+      </exclusion>
+    </exclusions>
+  </dependency>            
+	<dependency>
+  <groupId>org.codehaus.jackson</groupId>
+  <artifactId>jackson-mapper-asl</artifactId>
+  <version>1.6.4</version>
+  <scope>compile</scope>
+</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>7.3.0.v20110203</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.eclipse.jetty</groupId>-->
+<!--			<artifactId>jetty-jsp-2.1</artifactId>-->
+<!--			<version>7.3.0.v20110203</version>-->
+<!--		</dependency>-->
+		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp-2.1</artifactId>
+			<version>7.3.0.v20110203</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet.jsp</groupId>-->
+<!--			<artifactId>jsp-api</artifactId>-->
+<!--			<version>2.1</version>-->
+<!--		</dependency>-->
+<!--	<dependency>-->
+<!--		<groupId>javax.servlet</groupId>-->
+<!--		<artifactId>servlet-api</artifactId>-->
+<!--		<version>2.5</version>-->
+<!--		<scope>provided</scope>-->
+<!--	</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>jstl</artifactId>-->
+<!--			<version>1.2</version>-->
+<!--		</dependency>-->
+		
+<!--		<dependency>-->
+<!--  <groupId>org.eclipse.jetty</groupId>-->
+<!--  <artifactId>jetty-webapp</artifactId>-->
+<!--  <version>8.0.0.M1</version>-->
+<!--</dependency>-->
+<!--<dependency>-->
+<!--  <groupId>javax.servlet.jsp</groupId>-->
+<!--  <artifactId>jsp-api</artifactId>-->
+<!--  <version>2.1</version>-->
+<!--</dependency>-->
+
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-server</artifactId>
+  <version>7.3.0.v20110203</version>
+</dependency>
+		<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-servlet</artifactId>
+  <version>7.3.0.v20110203</version>
+</dependency>
+		<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-util</artifactId>
+  <version>7.3.0.v20110203</version>
+</dependency>
+		<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-webapp</artifactId>
+  <version>7.3.0.v20110203</version>
+</dependency>
+				<dependency>
+  <groupId>org.mortbay.jetty</groupId>
+  <artifactId>jsp-2.1-glassfish</artifactId>
+  <version>2.1.v20100127</version>
+</dependency>
+		
+<!--		compile 'org.eclipse.jetty:jetty-server:7.3.0.v20110203'-->
+<!--compile 'org.eclipse.jetty:jetty-servlet:7.3.0.v20110203'-->
+<!--compile 'org.eclipse.jetty:jetty-util:7.3.0.v20110203'-->
+<!--compile 'org.eclipse.jetty:jetty-webapp:7.3.0.v20110203'-->
+<!--compile 'org.mortbay.jetty:jsp-2.1-glassfish:2.1.v20100127'-->
+		
+		
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java-format</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.12</version>
+		</dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-bundle</artifactId>
+      <version>1.12</version>
+    </dependency>
+		<dependency>
+			<groupId>com.dyuproject.protostuff</groupId>
+			<artifactId>protostuff-json</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dyuproject.protostuff</groupId>
+			<artifactId>protostuff-runtime</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>2.0</version>
+		</dependency>
+  <dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.1</version>
+    <scope>compile</scope>
+  </dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,1 @@
+The files in this directory come from the source code downloadable from http://code.google.com/p/protobuf/downloads/list

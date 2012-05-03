@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <a class="brand" href="#">
+          Micro-Manager Anywhere
+        </a>
+        <li><a href="acquisition">Acquisition</a></li>
+        <li><a href="configurations">Configurations</a></li>
+        <li><a href="devices">Devices</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

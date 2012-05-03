@@ -1,0 +1,30 @@
+
+package org.ratatosk.mmrest.data;
+
+enum MmPropertyTypes {
+  UNDEFINED = 0;
+  BOOLEAN = 1;
+  INTEGER = 2;
+  FLOAT = 3;
+  STRING = 4;
+}
+
+message MmDevicesListing {
+  repeated MmDeviceListing mmDeviceListings = 1;
+}
+
+message MmDeviceListing {
+  required string deviceId = 1;
+  required string deviceLabel = 2;
+  required string deviceType = 3;
+  required string deviceUrl = 4;
+  repeated MmDeviceProperty mmDeviceProperties = 5;
+}
+
+message MmDeviceProperty {
+  required string propertyId = 1;
+  required string propertyValue = 2;
+  required string propertyLabel = 3;
+  required string propertyType = 4;
+  required string propertyUrl = 5;
+}

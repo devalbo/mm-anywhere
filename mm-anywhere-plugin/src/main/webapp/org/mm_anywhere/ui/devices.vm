@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' >
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
+    <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
+    <script src="/mm/ui/js/bootstrap.js"></script>
+    <title>MMRest - Devices</title>
+  </head>
+
+  <body>
+    #include("/org/mm_anywhere/ui/header.vm")
+    
+    <div class="container">
+	  <div id="content">
+	  <header class="jumbotron subhead" id="overview">
+      <h1>Devices</h1>
+      <div class="tabbable tabs-left">
+        <ul id="myTab" class="nav nav-tabs">
+          <li class=""><a href="#lA" data-toggle="tab">Section 1</a></li>
+          <li class=""><a href="#lB" data-toggle="tab">Section 2</a></li>
+          <li class=""><a href="#lC" data-toggle="tab">Section 3</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="lA">
+            <p>I'm in Section A.</p>
+          </div>
+          <div class="tab-pane" id="lB">
+            <p>Howdy, I'm in Section B.</p>
+          </div>
+          <div class="tab-pane" id="lC">
+            <p>What up girl, this is Section C.</p>
+          </div>
+        </div>
+      </div>
+	  	<table>
+	  	#foreach( $device in $devices )
+    		<tr><td>$foreach.count</td><td>$device.deviceLabel</td></tr>
+			#end
+			</table>
+		</header>
+		
+		<script>
+      $(function () {
+        $('#myTab a:first').tab('show');
+      })
+    </script>
+	  
+	  </div>  <!-- end #content -->
+	  </div>  <!-- end #container -->
+  </body>
+</html>
