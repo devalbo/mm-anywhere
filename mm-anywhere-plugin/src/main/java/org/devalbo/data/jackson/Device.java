@@ -47,5 +47,13 @@ public class Device implements IJacksonIo {
   public String getDeviceLabel() {
   	return deviceLabel;
   }
+  
+  public List<Property> getDeviceProperties() {
+  	return deviceProperties;
+  }
+  
+  public List<Command> getDeviceCommands() {
+  	return deviceCommands;
+  }
 
 }

@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
     <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/mm/ui/js/jquery.popupWindow.js"></script>
     <script src="/mm/ui/js/bootstrap.js"></script>
     <title>MMRest - Devices</title>
   </head>
@@ -16,34 +17,53 @@
 	  <header class="jumbotron subhead" id="overview">
       <h1>Devices</h1>
       <div class="tabbable tabs-left">
-        <ul id="myTab" class="nav nav-tabs">
-          <li class=""><a href="#lA" data-toggle="tab">Section 1</a></li>
-          <li class=""><a href="#lB" data-toggle="tab">Section 2</a></li>
-          <li class=""><a href="#lC" data-toggle="tab">Section 3</a></li>
+        <ul id="devTab" class="nav nav-tabs">
+          #foreach( $device in $devices )
+            <li class=""><a href="#dev$foreach.count" data-toggle="tab">$device.deviceLabel</a></li>
+          #end
         </ul>
         <div class="tab-content">
-          <div class="tab-pane" id="lA">
-            <p>I'm in Section A.</p>
-          </div>
-          <div class="tab-pane" id="lB">
-            <p>Howdy, I'm in Section B.</p>
-          </div>
-          <div class="tab-pane" id="lC">
-            <p>What up girl, this is Section C.</p>
-          </div>
+          #foreach( $device in $devices )
+            <div class="tab-pane" id="dev$foreach.count">
+              <h2>$device.deviceLabel - Properties</h2>
+              <ul id="devicePropertiesList" class="unstyled">
+                #foreach( $property in $device.getDeviceProperties() )
+                  <li>
+                  <div><a href="$property.getPropertyUrl()">$property.getPropertyLabel()</a> [$property.getPropertyType()]</div>
+                  <form action="$property.getPropertyUrl()" method="post">
+                    <input size="30" type="text" name="propVal" value="$property.getPropertyValue()">
+                    <input type="submit" value="Set">
+                  </form>
+                  </li>
+                #end
+              </ul>
+              <h2>$device.deviceLabel - Commands</h2>
+              <ul id="deviceCommandsList" class="unstyled">
+                #foreach( $command in $device.getDeviceCommands() )
+                  <li>
+                  <button class="btn dev-command" href="$command.getCommandUrl()">$command.getCommandLabel()</button>
+                  </li>
+                #end
+              </ul>
+            </div>
+          #end
         </div>
       </div>
-	  	<table>
-	  	#foreach( $device in $devices )
-    		<tr><td>$foreach.count</td><td>$device.deviceLabel</td></tr>
-			#end
-			</table>
 		</header>
 		
 		<script>
       $(function () {
-        $('#myTab a:first').tab('show');
+        $('#devTab a:first').tab('show');
       })
+//       $(".dev-command").click(function () {
+//         event.preventDefault();
+//     	  $(this).popupWindow({
+//     		  height:500, 
+//     		  width:800, 
+//     		  top:50, 
+//     		  left:50 
+//         });
+// 	    });
     </script>
 	  
 	  </div>  <!-- end #content -->

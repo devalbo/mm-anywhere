@@ -23,7 +23,7 @@ public class MmDevalboConverter {
 
   public static Devices getMmDevicesListing() {
     List<Device> mmDevices = new ArrayList<Device>();
-    for (String device : MmCoreUtils.getStrVectorIterator(MmRestPlugin.getMmCore().getLoadedDevices())) {
+    for (String device : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getLoadedDevices())) {
       try {
         mmDevices.add(getMmDeviceListing(device));
       } catch (Exception e) {
@@ -35,18 +35,18 @@ public class MmDevalboConverter {
   }
   
   public static Device getMmDeviceListing(String device) throws Exception {
-    DeviceType deviceType = MmRestPlugin.getMmCore().getDeviceType(device);
+    DeviceType deviceType = MmAnywherePlugin.getMmCore().getDeviceType(device);
     Device d = new Device(device, 
         device, 
         deviceType.toString(),
-        MmRestPlugin.makeDeviceUrl(device),
+        MmAnywherePlugin.makeDeviceUrl(device),
         getAllMmProperties(device),
         getAllMmCommands(device));
     return d;
   }
 
   private static List<Property> getAllMmProperties(String device) throws Exception {
-    StrVector propertyNames = MmRestPlugin.getMmCore().getDevicePropertyNames(device);
+    StrVector propertyNames = MmAnywherePlugin.getMmCore().getDevicePropertyNames(device);
     List<Property> mmDeviceProperties = new ArrayList<Property>();
     for (String propertyName : propertyNames) {
       mmDeviceProperties.add(getMmPropertyListing(device, propertyName));
@@ -56,10 +56,10 @@ public class MmDevalboConverter {
   
   private static List<Command> getAllMmCommands(String deviceId) throws Exception {
   	List<Command> mmDeviceCommands = new ArrayList<Command>();
-  	DeviceType deviceType = MmRestPlugin.getMmCore().getDeviceType(deviceId);
+  	DeviceType deviceType = MmAnywherePlugin.getMmCore().getDeviceType(deviceId);
   	if (deviceType == DeviceType.CameraDevice) {
   		Command snapImageCommand = new Command("snapImage", 
-  				"Snap Image", MmRestPlugin.makeCommandUrl(deviceId, "snapImage"));
+  				"Snap Image", MmAnywherePlugin.makeCommandUrl(deviceId, "snapImage"));
   		mmDeviceCommands.add(snapImageCommand);
 
   	} else if (deviceType == DeviceType.StateDevice) {
@@ -69,19 +69,19 @@ public class MmDevalboConverter {
   }
 
   public static Property getMmPropertyListing(String device, String property) throws Exception {
-    PropertyType propertyType = MmRestPlugin.getMmCore().getPropertyType(device, property);
-    String propertyValue = MmRestPlugin.getMmCore().getProperty(device, property);
+    PropertyType propertyType = MmAnywherePlugin.getMmCore().getPropertyType(device, property);
+    String propertyValue = MmAnywherePlugin.getMmCore().getProperty(device, property);
     
     Property p = new Property(property, 
         property, 
         propertyType.toString(), 
         propertyValue,
-        MmRestPlugin.makePropertyUrl(device, property));
+        MmAnywherePlugin.makePropertyUrl(device, property));
     return p;
   }
   
   public static void setPropertyValue(String device, String property, String value) throws Exception {
-  	MmRestPlugin.getMmCore().setProperty(device, property, value);
+  	MmAnywherePlugin.getMmCore().setProperty(device, property, value);
   }
   
 }

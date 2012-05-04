@@ -41,7 +41,7 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
  * @author ajb
  *
  */
-public class MmRestPlugin extends MMFrame implements MMPlugin {
+public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 
 	public final static String MENU_NAME = "MMRest Plugin";
 	public final static String PREF_WWW_RESOURCE_PATH = "www-resource-path";
@@ -54,7 +54,7 @@ public class MmRestPlugin extends MMFrame implements MMPlugin {
 
 	private static CMMCore _mmCore;
 
-	private static MmRestPlugin _mmRestPlugin;
+	private static MmAnywherePlugin _mmRestPlugin;
 
 	private Server _webServer;
 
@@ -74,14 +74,14 @@ public class MmRestPlugin extends MMFrame implements MMPlugin {
 		return _mmCore;
 	}
 
-	public MmRestPlugin() {
+	public MmAnywherePlugin() {
 		setTitle("MM Rest");
 		final Preferences prefs = Preferences.userNodeForPackage(this.getClass());
 
-		_wwwResourcePath = prefs.get(MmRestPlugin.PREF_WWW_RESOURCE_PATH, "c:/Users/ajb/workspace-devalbo/mm-anywhere-plugin/www");
-		_hostPath = prefs.get(MmRestPlugin.PREF_HOST_PATH, "http://localhost");
-		_port = prefs.getInt(MmRestPlugin.PREF_HOST_PORT, 8080);
-		_autoStartServer = prefs.getBoolean(MmRestPlugin.PREF_AUTO_START_SERVER, false);
+		_wwwResourcePath = prefs.get(MmAnywherePlugin.PREF_WWW_RESOURCE_PATH, "c:/Users/ajb/workspace-devalbo/mm-anywhere-plugin/www");
+		_hostPath = prefs.get(MmAnywherePlugin.PREF_HOST_PATH, "http://localhost");
+		_port = prefs.getInt(MmAnywherePlugin.PREF_HOST_PORT, 8080);
+		_autoStartServer = prefs.getBoolean(MmAnywherePlugin.PREF_AUTO_START_SERVER, false);
 
 		addWindowListener(new WindowAdapter() {
 
@@ -95,10 +95,10 @@ public class MmRestPlugin extends MMFrame implements MMPlugin {
 				}
 				_autoStartServer = _autoStartServerCheckBox.isSelected();
 				
-				prefs.put(MmRestPlugin.PREF_WWW_RESOURCE_PATH, _wwwResourcePath);
-				prefs.put(MmRestPlugin.PREF_HOST_PATH, _hostPath);
-				prefs.putInt(MmRestPlugin.PREF_HOST_PORT, _port);
-				prefs.putBoolean(MmRestPlugin.PREF_AUTO_START_SERVER, _autoStartServer);
+				prefs.put(MmAnywherePlugin.PREF_WWW_RESOURCE_PATH, _wwwResourcePath);
+				prefs.put(MmAnywherePlugin.PREF_HOST_PATH, _hostPath);
+				prefs.putInt(MmAnywherePlugin.PREF_HOST_PORT, _port);
+				prefs.putBoolean(MmAnywherePlugin.PREF_AUTO_START_SERVER, _autoStartServer);
 				try {
 	        prefs.flush();
         } catch (BackingStoreException e1) {
@@ -214,7 +214,7 @@ public class MmRestPlugin extends MMFrame implements MMPlugin {
 		sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
 		sh.setInitParameter("com.sun.jersey.config.property.packages", "jetty");
 //		sh.setInitParameter("com.sun.jersey.config.property.packages", "org.ratatosk.mmrest;org.devalbo.data.jackson");
-		sh.setInitParameter("com.sun.jersey.config.property.packages", "org.mm_anywhere.app;org.mm_anywhere.remoteio");
+		sh.setInitParameter("com.sun.jersey.config.property.packages", "org.mm_anywhere.app;org.mm_anywhere.remoteio;org.devalbo.data.jackson");
 		ServletContextHandler jerseyContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		jerseyContext.addServlet(sh, "/mm/*");
 

@@ -33,4 +33,16 @@ public class Command {
   @JsonProperty
   public List<CmdParameter> commandParameters;
   
+  
+  public String getCommandId() {
+  	return commandId;
+  }
+  
+  public String getCommandLabel() {
+  	return commandLabel;
+  }
+  
+  public String getCommandUrl() {
+  	return commandUrl;
+  }
 }

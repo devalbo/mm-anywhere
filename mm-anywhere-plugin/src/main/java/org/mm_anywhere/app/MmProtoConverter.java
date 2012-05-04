@@ -22,7 +22,7 @@ public class MmProtoConverter {
 
   public static MmDevicesListing getMmDevicesListing() {
     List<MmDeviceListing> mmDevices = new ArrayList<MmDeviceListing>();
-    for (String device : MmCoreUtils.getStrVectorIterator(MmRestPlugin.getMmCore().getLoadedDevices())) {
+    for (String device : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getLoadedDevices())) {
       try {
         mmDevices.add(getMmDeviceListing(device));
       } catch (Exception e) {
@@ -34,7 +34,7 @@ public class MmProtoConverter {
   }
 
   private static MmDeviceListing getMmDeviceListing(String device) throws Exception {
-    DeviceType deviceType = MmRestPlugin.getMmCore().getDeviceType(device);
+    DeviceType deviceType = MmAnywherePlugin.getMmCore().getDeviceType(device);
     MmDeviceListing deviceListing = MmDeviceListing.newBuilder().
       setDeviceId(device).
       setDeviceUrl("http://" + device).
@@ -46,7 +46,7 @@ public class MmProtoConverter {
   }
 
   private static List<MmDeviceProperty> getAllMmProperties(String device) throws Exception {
-    StrVector propertyNames = MmRestPlugin.getMmCore().getDevicePropertyNames(device);
+    StrVector propertyNames = MmAnywherePlugin.getMmCore().getDevicePropertyNames(device);
     List<MmDeviceProperty> mmDeviceProperties = new ArrayList<MmDeviceProperty>();
     for (String propertyName : propertyNames) {
       mmDeviceProperties.add(getMmPropertyListing(device, propertyName));
@@ -55,8 +55,8 @@ public class MmProtoConverter {
   }
 
   private static MmDeviceProperty getMmPropertyListing(String device, String property) throws Exception {
-    PropertyType propertyType = MmRestPlugin.getMmCore().getPropertyType(device, property);
-    String propertyValue = MmRestPlugin.getMmCore().getProperty(device, property);
+    PropertyType propertyType = MmAnywherePlugin.getMmCore().getPropertyType(device, property);
+    String propertyValue = MmAnywherePlugin.getMmCore().getProperty(device, property);
     
     MmDeviceProperty mmDeviceProperty = MmDeviceProperty.newBuilder().
       setPropertyId(property).

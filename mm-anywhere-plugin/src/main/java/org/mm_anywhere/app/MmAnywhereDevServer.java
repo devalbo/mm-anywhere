@@ -19,7 +19,7 @@ import org.devalbo.data.jackson.Property;
  *
  */
 @Path("/dev")
-public class MmRestDevServer {
+public class MmAnywhereDevServer {
 
 	// The Java method will process HTTP GET requests
 	@GET 

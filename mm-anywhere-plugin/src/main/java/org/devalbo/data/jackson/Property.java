@@ -36,4 +36,24 @@ public class Property implements IJacksonIo {
   @JsonProperty
   public String propertyUrl;
 
+  public String getPropertyId() {
+  	return propertyId;
+  }
+  
+  public String getPropertyValue() {
+  	return propertyValue;
+  }
+  
+  public String getPropertyLabel() {
+  	return propertyLabel;
+  }
+  
+  public String getPropertyType() {
+  	return propertyType;
+  }
+  
+  public String getPropertyUrl() {
+  	return propertyUrl;
+  }
+  
 }

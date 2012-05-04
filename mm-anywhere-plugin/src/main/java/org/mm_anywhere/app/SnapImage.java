@@ -37,7 +37,7 @@ public class SnapImage {
 //	@POST
 //	@Produces("text/plain")
 	public Response execute(final @PathParam("deviceId") String deviceId) throws Exception {
-		final CMMCore core = MmRestPlugin.getMmCore();
+		final CMMCore core = MmAnywherePlugin.getMmCore();
 
 		ValidationUtilities.validateDeviceType(deviceId, DeviceType.CameraDevice);
 

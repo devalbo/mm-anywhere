@@ -39,7 +39,6 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
-//			context.put("name", new String("Velocity"));
 			context.put("devices", MmDevalboConverter.getMmDevicesListing().devices);
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "devices.vm");
 			sw = new StringWriter();
@@ -63,7 +62,6 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
-			context.put("name", new String("Velocity"));
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "configurations.vm");
 			sw = new StringWriter();
 			template.merge(context, sw);
@@ -86,7 +84,6 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
-			context.put("name", new String("Velocity"));
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "acquisition.vm");
 			sw = new StringWriter();
 			template.merge(context, sw);
