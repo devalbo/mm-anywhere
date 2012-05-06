@@ -62,6 +62,7 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
+			context.put("configurations", MmDevalboConverter.getAllMmConfigurations().getMmConfigGroupsList());
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "configurations.vm");
 			sw = new StringWriter();
 			template.merge(context, sw);

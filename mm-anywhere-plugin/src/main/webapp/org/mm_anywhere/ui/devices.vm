@@ -16,40 +16,41 @@
 	  <div id="content">
 	  <header class="jumbotron subhead" id="overview">
       <h1>Devices</h1>
-      <div class="tabbable tabs-left">
-        <ul id="devTab" class="nav nav-tabs">
-          #foreach( $device in $devices )
-            <li class=""><a href="#dev$foreach.count" data-toggle="tab">$device.deviceLabel</a></li>
-          #end
-        </ul>
-        <div class="tab-content">
-          #foreach( $device in $devices )
-            <div class="tab-pane" id="dev$foreach.count">
-              <h2>$device.deviceLabel - Properties</h2>
-              <ul id="devicePropertiesList" class="unstyled">
-                #foreach( $property in $device.getDeviceProperties() )
-                  <li>
-                  <div><a href="$property.getPropertyUrl()">$property.getPropertyLabel()</a> [$property.getPropertyType()]</div>
-                  <form action="$property.getPropertyUrl()" method="post">
-                    <input size="30" type="text" name="propVal" value="$property.getPropertyValue()">
-                    <input type="submit" value="Set">
-                  </form>
-                  </li>
-                #end
-              </ul>
-              <h2>$device.deviceLabel - Commands</h2>
-              <ul id="deviceCommandsList" class="unstyled">
-                #foreach( $command in $device.getDeviceCommands() )
-                  <li>
-                  <button class="btn dev-command" href="$command.getCommandUrl()">$command.getCommandLabel()</button>
-                  </li>
-                #end
-              </ul>
-            </div>
-          #end
-        </div>
+    </header>
+      
+    <div class="tabbable tabs-left">
+      <ul id="devTab" class="nav nav-tabs">
+        #foreach( $device in $devices )
+          <li class=""><a href="#dev$foreach.count" data-toggle="tab">$device.deviceLabel</a></li>
+        #end
+      </ul>
+      <div class="tab-content">
+        #foreach( $device in $devices )
+          <div class="tab-pane" id="dev$foreach.count">
+            <h2>$device.deviceLabel - Properties</h2>
+            <ul id="devicePropertiesList" class="unstyled">
+              #foreach( $property in $device.getDeviceProperties() )
+                <li>
+                <div><a href="$property.getPropertyUrl()">$property.getPropertyLabel()</a> [$property.getPropertyType()]</div>
+                <form action="$property.getPropertyUrl()" method="post">
+                  <input size="30" type="text" name="propVal" value="$property.getPropertyValue()">
+                  <input type="submit" value="Set">
+                </form>
+                </li>
+              #end
+            </ul>
+            <h2>$device.deviceLabel - Commands</h2>
+            <ul id="deviceCommandsList" class="unstyled">
+              #foreach( $command in $device.getDeviceCommands() )
+                <li>
+                <button class="btn dev-command" href="$command.getCommandUrl()">$command.getCommandLabel()</button>
+                </li>
+              #end
+            </ul>
+          </div>
+        #end
       </div>
-		</header>
+    </div>
 		
 		<script>
       $(function () {

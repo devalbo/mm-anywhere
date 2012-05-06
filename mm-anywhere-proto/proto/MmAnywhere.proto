@@ -28,3 +28,21 @@ message MmDeviceProperty {
   required string propertyType = 4;
   required string propertyUrl = 5;
 }
+
+message MmConfigGroups {
+  repeated MmConfigGroup mmConfigGroups = 1;
+}
+
+message MmConfigGroup {
+  required string configGroupId = 1;
+  required string configGroupLabel = 2;
+  repeated MmConfigGroupPreset configGroupPresets = 3;
+  required string currentPreset = 4;
+}
+
+message MmConfigGroupPreset {
+  required string presetId = 1;
+  required string presetLabel = 2;
+  repeated string presetPropertyLabels = 3;
+  repeated string presetPropertyValues = 4;
+}

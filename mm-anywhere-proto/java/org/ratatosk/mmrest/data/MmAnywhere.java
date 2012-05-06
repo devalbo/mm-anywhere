@@ -2414,6 +2414,2148 @@ public final class MmAnywhere {
     // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceProperty)
   }
   
+  public interface MmConfigGroupsOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated .org.ratatosk.mmrest.data.MmConfigGroup mmConfigGroups = 1;
+    java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> 
+        getMmConfigGroupsList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup getMmConfigGroups(int index);
+    int getMmConfigGroupsCount();
+    java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder> 
+        getMmConfigGroupsOrBuilderList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder getMmConfigGroupsOrBuilder(
+        int index);
+  }
+  public static final class MmConfigGroups extends
+      com.google.protobuf.GeneratedMessage
+      implements MmConfigGroupsOrBuilder {
+    // Use MmConfigGroups.newBuilder() to construct.
+    private MmConfigGroups(Builder builder) {
+      super(builder);
+    }
+    private MmConfigGroups(boolean noInit) {}
+    
+    private static final MmConfigGroups defaultInstance;
+    public static MmConfigGroups getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public MmConfigGroups getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroups_fieldAccessorTable;
+    }
+    
+    // repeated .org.ratatosk.mmrest.data.MmConfigGroup mmConfigGroups = 1;
+    public static final int MMCONFIGGROUPS_FIELD_NUMBER = 1;
+    private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> mmConfigGroups_;
+    public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> getMmConfigGroupsList() {
+      return mmConfigGroups_;
+    }
+    public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder> 
+        getMmConfigGroupsOrBuilderList() {
+      return mmConfigGroups_;
+    }
+    public int getMmConfigGroupsCount() {
+      return mmConfigGroups_.size();
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup getMmConfigGroups(int index) {
+      return mmConfigGroups_.get(index);
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder getMmConfigGroupsOrBuilder(
+        int index) {
+      return mmConfigGroups_.get(index);
+    }
+    
+    private void initFields() {
+      mmConfigGroups_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      for (int i = 0; i < getMmConfigGroupsCount(); i++) {
+        if (!getMmConfigGroups(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < mmConfigGroups_.size(); i++) {
+        output.writeMessage(1, mmConfigGroups_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i < mmConfigGroups_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, mmConfigGroups_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroups_fieldAccessorTable;
+      }
+      
+      // Construct using org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getMmConfigGroupsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (mmConfigGroupsBuilder_ == null) {
+          mmConfigGroups_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          mmConfigGroupsBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.getDescriptor();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups getDefaultInstanceForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.getDefaultInstance();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups build() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups buildPartial() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups result = new org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups(this);
+        int from_bitField0_ = bitField0_;
+        if (mmConfigGroupsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            mmConfigGroups_ = java.util.Collections.unmodifiableList(mmConfigGroups_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.mmConfigGroups_ = mmConfigGroups_;
+        } else {
+          result.mmConfigGroups_ = mmConfigGroupsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups) {
+          return mergeFrom((org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups other) {
+        if (other == org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.getDefaultInstance()) return this;
+        if (mmConfigGroupsBuilder_ == null) {
+          if (!other.mmConfigGroups_.isEmpty()) {
+            if (mmConfigGroups_.isEmpty()) {
+              mmConfigGroups_ = other.mmConfigGroups_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMmConfigGroupsIsMutable();
+              mmConfigGroups_.addAll(other.mmConfigGroups_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.mmConfigGroups_.isEmpty()) {
+            if (mmConfigGroupsBuilder_.isEmpty()) {
+              mmConfigGroupsBuilder_.dispose();
+              mmConfigGroupsBuilder_ = null;
+              mmConfigGroups_ = other.mmConfigGroups_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              mmConfigGroupsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getMmConfigGroupsFieldBuilder() : null;
+            } else {
+              mmConfigGroupsBuilder_.addAllMessages(other.mmConfigGroups_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        for (int i = 0; i < getMmConfigGroupsCount(); i++) {
+          if (!getMmConfigGroups(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder subBuilder = org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addMmConfigGroups(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .org.ratatosk.mmrest.data.MmConfigGroup mmConfigGroups = 1;
+      private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> mmConfigGroups_ =
+        java.util.Collections.emptyList();
+      private void ensureMmConfigGroupsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          mmConfigGroups_ = new java.util.ArrayList<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup>(mmConfigGroups_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder> mmConfigGroupsBuilder_;
+      
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> getMmConfigGroupsList() {
+        if (mmConfigGroupsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(mmConfigGroups_);
+        } else {
+          return mmConfigGroupsBuilder_.getMessageList();
+        }
+      }
+      public int getMmConfigGroupsCount() {
+        if (mmConfigGroupsBuilder_ == null) {
+          return mmConfigGroups_.size();
+        } else {
+          return mmConfigGroupsBuilder_.getCount();
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup getMmConfigGroups(int index) {
+        if (mmConfigGroupsBuilder_ == null) {
+          return mmConfigGroups_.get(index);
+        } else {
+          return mmConfigGroupsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setMmConfigGroups(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup value) {
+        if (mmConfigGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.set(index, value);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setMmConfigGroups(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder builderForValue) {
+        if (mmConfigGroupsBuilder_ == null) {
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addMmConfigGroups(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup value) {
+        if (mmConfigGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.add(value);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addMmConfigGroups(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup value) {
+        if (mmConfigGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.add(index, value);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addMmConfigGroups(
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder builderForValue) {
+        if (mmConfigGroupsBuilder_ == null) {
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.add(builderForValue.build());
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addMmConfigGroups(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder builderForValue) {
+        if (mmConfigGroupsBuilder_ == null) {
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllMmConfigGroups(
+          java.lang.Iterable<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup> values) {
+        if (mmConfigGroupsBuilder_ == null) {
+          ensureMmConfigGroupsIsMutable();
+          super.addAll(values, mmConfigGroups_);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearMmConfigGroups() {
+        if (mmConfigGroupsBuilder_ == null) {
+          mmConfigGroups_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeMmConfigGroups(int index) {
+        if (mmConfigGroupsBuilder_ == null) {
+          ensureMmConfigGroupsIsMutable();
+          mmConfigGroups_.remove(index);
+          onChanged();
+        } else {
+          mmConfigGroupsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder getMmConfigGroupsBuilder(
+          int index) {
+        return getMmConfigGroupsFieldBuilder().getBuilder(index);
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder getMmConfigGroupsOrBuilder(
+          int index) {
+        if (mmConfigGroupsBuilder_ == null) {
+          return mmConfigGroups_.get(index);  } else {
+          return mmConfigGroupsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder> 
+           getMmConfigGroupsOrBuilderList() {
+        if (mmConfigGroupsBuilder_ != null) {
+          return mmConfigGroupsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(mmConfigGroups_);
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder addMmConfigGroupsBuilder() {
+        return getMmConfigGroupsFieldBuilder().addBuilder(
+            org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.getDefaultInstance());
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder addMmConfigGroupsBuilder(
+          int index) {
+        return getMmConfigGroupsFieldBuilder().addBuilder(
+            index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.getDefaultInstance());
+      }
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder> 
+           getMmConfigGroupsBuilderList() {
+        return getMmConfigGroupsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder> 
+          getMmConfigGroupsFieldBuilder() {
+        if (mmConfigGroupsBuilder_ == null) {
+          mmConfigGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder>(
+                  mmConfigGroups_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          mmConfigGroups_ = null;
+        }
+        return mmConfigGroupsBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:org.ratatosk.mmrest.data.MmConfigGroups)
+    }
+    
+    static {
+      defaultInstance = new MmConfigGroups(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroups)
+  }
+  
+  public interface MmConfigGroupOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string configGroupId = 1;
+    boolean hasConfigGroupId();
+    String getConfigGroupId();
+    
+    // required string configGroupLabel = 2;
+    boolean hasConfigGroupLabel();
+    String getConfigGroupLabel();
+    
+    // repeated .org.ratatosk.mmrest.data.MmConfigGroupPreset configGroupPresets = 3;
+    java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> 
+        getConfigGroupPresetsList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset getConfigGroupPresets(int index);
+    int getConfigGroupPresetsCount();
+    java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder> 
+        getConfigGroupPresetsOrBuilderList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder getConfigGroupPresetsOrBuilder(
+        int index);
+    
+    // required string currentPreset = 4;
+    boolean hasCurrentPreset();
+    String getCurrentPreset();
+  }
+  public static final class MmConfigGroup extends
+      com.google.protobuf.GeneratedMessage
+      implements MmConfigGroupOrBuilder {
+    // Use MmConfigGroup.newBuilder() to construct.
+    private MmConfigGroup(Builder builder) {
+      super(builder);
+    }
+    private MmConfigGroup(boolean noInit) {}
+    
+    private static final MmConfigGroup defaultInstance;
+    public static MmConfigGroup getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public MmConfigGroup getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroup_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string configGroupId = 1;
+    public static final int CONFIGGROUPID_FIELD_NUMBER = 1;
+    private java.lang.Object configGroupId_;
+    public boolean hasConfigGroupId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getConfigGroupId() {
+      java.lang.Object ref = configGroupId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          configGroupId_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getConfigGroupIdBytes() {
+      java.lang.Object ref = configGroupId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        configGroupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string configGroupLabel = 2;
+    public static final int CONFIGGROUPLABEL_FIELD_NUMBER = 2;
+    private java.lang.Object configGroupLabel_;
+    public boolean hasConfigGroupLabel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getConfigGroupLabel() {
+      java.lang.Object ref = configGroupLabel_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          configGroupLabel_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getConfigGroupLabelBytes() {
+      java.lang.Object ref = configGroupLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        configGroupLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // repeated .org.ratatosk.mmrest.data.MmConfigGroupPreset configGroupPresets = 3;
+    public static final int CONFIGGROUPPRESETS_FIELD_NUMBER = 3;
+    private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> configGroupPresets_;
+    public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> getConfigGroupPresetsList() {
+      return configGroupPresets_;
+    }
+    public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder> 
+        getConfigGroupPresetsOrBuilderList() {
+      return configGroupPresets_;
+    }
+    public int getConfigGroupPresetsCount() {
+      return configGroupPresets_.size();
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset getConfigGroupPresets(int index) {
+      return configGroupPresets_.get(index);
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder getConfigGroupPresetsOrBuilder(
+        int index) {
+      return configGroupPresets_.get(index);
+    }
+    
+    // required string currentPreset = 4;
+    public static final int CURRENTPRESET_FIELD_NUMBER = 4;
+    private java.lang.Object currentPreset_;
+    public boolean hasCurrentPreset() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getCurrentPreset() {
+      java.lang.Object ref = currentPreset_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          currentPreset_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCurrentPresetBytes() {
+      java.lang.Object ref = currentPreset_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        currentPreset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      configGroupId_ = "";
+      configGroupLabel_ = "";
+      configGroupPresets_ = java.util.Collections.emptyList();
+      currentPreset_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasConfigGroupId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasConfigGroupLabel()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCurrentPreset()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getConfigGroupPresetsCount(); i++) {
+        if (!getConfigGroupPresets(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getConfigGroupIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getConfigGroupLabelBytes());
+      }
+      for (int i = 0; i < configGroupPresets_.size(); i++) {
+        output.writeMessage(3, configGroupPresets_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(4, getCurrentPresetBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getConfigGroupIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getConfigGroupLabelBytes());
+      }
+      for (int i = 0; i < configGroupPresets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, configGroupPresets_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getCurrentPresetBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroup_fieldAccessorTable;
+      }
+      
+      // Construct using org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getConfigGroupPresetsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        configGroupId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        configGroupLabel_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (configGroupPresetsBuilder_ == null) {
+          configGroupPresets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          configGroupPresetsBuilder_.clear();
+        }
+        currentPreset_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.getDescriptor();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup getDefaultInstanceForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.getDefaultInstance();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup build() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup buildPartial() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup result = new org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.configGroupId_ = configGroupId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.configGroupLabel_ = configGroupLabel_;
+        if (configGroupPresetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            configGroupPresets_ = java.util.Collections.unmodifiableList(configGroupPresets_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.configGroupPresets_ = configGroupPresets_;
+        } else {
+          result.configGroupPresets_ = configGroupPresetsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.currentPreset_ = currentPreset_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup) {
+          return mergeFrom((org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup other) {
+        if (other == org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.getDefaultInstance()) return this;
+        if (other.hasConfigGroupId()) {
+          setConfigGroupId(other.getConfigGroupId());
+        }
+        if (other.hasConfigGroupLabel()) {
+          setConfigGroupLabel(other.getConfigGroupLabel());
+        }
+        if (configGroupPresetsBuilder_ == null) {
+          if (!other.configGroupPresets_.isEmpty()) {
+            if (configGroupPresets_.isEmpty()) {
+              configGroupPresets_ = other.configGroupPresets_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureConfigGroupPresetsIsMutable();
+              configGroupPresets_.addAll(other.configGroupPresets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.configGroupPresets_.isEmpty()) {
+            if (configGroupPresetsBuilder_.isEmpty()) {
+              configGroupPresetsBuilder_.dispose();
+              configGroupPresetsBuilder_ = null;
+              configGroupPresets_ = other.configGroupPresets_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              configGroupPresetsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getConfigGroupPresetsFieldBuilder() : null;
+            } else {
+              configGroupPresetsBuilder_.addAllMessages(other.configGroupPresets_);
+            }
+          }
+        }
+        if (other.hasCurrentPreset()) {
+          setCurrentPreset(other.getCurrentPreset());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasConfigGroupId()) {
+          
+          return false;
+        }
+        if (!hasConfigGroupLabel()) {
+          
+          return false;
+        }
+        if (!hasCurrentPreset()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getConfigGroupPresetsCount(); i++) {
+          if (!getConfigGroupPresets(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              configGroupId_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              configGroupLabel_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder subBuilder = org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addConfigGroupPresets(subBuilder.buildPartial());
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              currentPreset_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string configGroupId = 1;
+      private java.lang.Object configGroupId_ = "";
+      public boolean hasConfigGroupId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getConfigGroupId() {
+        java.lang.Object ref = configGroupId_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          configGroupId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setConfigGroupId(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        configGroupId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearConfigGroupId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        configGroupId_ = getDefaultInstance().getConfigGroupId();
+        onChanged();
+        return this;
+      }
+      void setConfigGroupId(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        configGroupId_ = value;
+        onChanged();
+      }
+      
+      // required string configGroupLabel = 2;
+      private java.lang.Object configGroupLabel_ = "";
+      public boolean hasConfigGroupLabel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getConfigGroupLabel() {
+        java.lang.Object ref = configGroupLabel_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          configGroupLabel_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setConfigGroupLabel(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        configGroupLabel_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearConfigGroupLabel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        configGroupLabel_ = getDefaultInstance().getConfigGroupLabel();
+        onChanged();
+        return this;
+      }
+      void setConfigGroupLabel(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        configGroupLabel_ = value;
+        onChanged();
+      }
+      
+      // repeated .org.ratatosk.mmrest.data.MmConfigGroupPreset configGroupPresets = 3;
+      private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> configGroupPresets_ =
+        java.util.Collections.emptyList();
+      private void ensureConfigGroupPresetsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          configGroupPresets_ = new java.util.ArrayList<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset>(configGroupPresets_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder> configGroupPresetsBuilder_;
+      
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> getConfigGroupPresetsList() {
+        if (configGroupPresetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(configGroupPresets_);
+        } else {
+          return configGroupPresetsBuilder_.getMessageList();
+        }
+      }
+      public int getConfigGroupPresetsCount() {
+        if (configGroupPresetsBuilder_ == null) {
+          return configGroupPresets_.size();
+        } else {
+          return configGroupPresetsBuilder_.getCount();
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset getConfigGroupPresets(int index) {
+        if (configGroupPresetsBuilder_ == null) {
+          return configGroupPresets_.get(index);
+        } else {
+          return configGroupPresetsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setConfigGroupPresets(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset value) {
+        if (configGroupPresetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.set(index, value);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setConfigGroupPresets(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder builderForValue) {
+        if (configGroupPresetsBuilder_ == null) {
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addConfigGroupPresets(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset value) {
+        if (configGroupPresetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.add(value);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addConfigGroupPresets(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset value) {
+        if (configGroupPresetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.add(index, value);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addConfigGroupPresets(
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder builderForValue) {
+        if (configGroupPresetsBuilder_ == null) {
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addConfigGroupPresets(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder builderForValue) {
+        if (configGroupPresetsBuilder_ == null) {
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllConfigGroupPresets(
+          java.lang.Iterable<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset> values) {
+        if (configGroupPresetsBuilder_ == null) {
+          ensureConfigGroupPresetsIsMutable();
+          super.addAll(values, configGroupPresets_);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearConfigGroupPresets() {
+        if (configGroupPresetsBuilder_ == null) {
+          configGroupPresets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeConfigGroupPresets(int index) {
+        if (configGroupPresetsBuilder_ == null) {
+          ensureConfigGroupPresetsIsMutable();
+          configGroupPresets_.remove(index);
+          onChanged();
+        } else {
+          configGroupPresetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder getConfigGroupPresetsBuilder(
+          int index) {
+        return getConfigGroupPresetsFieldBuilder().getBuilder(index);
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder getConfigGroupPresetsOrBuilder(
+          int index) {
+        if (configGroupPresetsBuilder_ == null) {
+          return configGroupPresets_.get(index);  } else {
+          return configGroupPresetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder> 
+           getConfigGroupPresetsOrBuilderList() {
+        if (configGroupPresetsBuilder_ != null) {
+          return configGroupPresetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(configGroupPresets_);
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder addConfigGroupPresetsBuilder() {
+        return getConfigGroupPresetsFieldBuilder().addBuilder(
+            org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.getDefaultInstance());
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder addConfigGroupPresetsBuilder(
+          int index) {
+        return getConfigGroupPresetsFieldBuilder().addBuilder(
+            index, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.getDefaultInstance());
+      }
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder> 
+           getConfigGroupPresetsBuilderList() {
+        return getConfigGroupPresetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder> 
+          getConfigGroupPresetsFieldBuilder() {
+        if (configGroupPresetsBuilder_ == null) {
+          configGroupPresetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder>(
+                  configGroupPresets_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          configGroupPresets_ = null;
+        }
+        return configGroupPresetsBuilder_;
+      }
+      
+      // required string currentPreset = 4;
+      private java.lang.Object currentPreset_ = "";
+      public boolean hasCurrentPreset() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public String getCurrentPreset() {
+        java.lang.Object ref = currentPreset_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          currentPreset_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCurrentPreset(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        currentPreset_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCurrentPreset() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        currentPreset_ = getDefaultInstance().getCurrentPreset();
+        onChanged();
+        return this;
+      }
+      void setCurrentPreset(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
+        currentPreset_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:org.ratatosk.mmrest.data.MmConfigGroup)
+    }
+    
+    static {
+      defaultInstance = new MmConfigGroup(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroup)
+  }
+  
+  public interface MmConfigGroupPresetOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string presetId = 1;
+    boolean hasPresetId();
+    String getPresetId();
+    
+    // required string presetLabel = 2;
+    boolean hasPresetLabel();
+    String getPresetLabel();
+    
+    // repeated string presetPropertyLabels = 3;
+    java.util.List<String> getPresetPropertyLabelsList();
+    int getPresetPropertyLabelsCount();
+    String getPresetPropertyLabels(int index);
+    
+    // repeated string presetPropertyValues = 4;
+    java.util.List<String> getPresetPropertyValuesList();
+    int getPresetPropertyValuesCount();
+    String getPresetPropertyValues(int index);
+  }
+  public static final class MmConfigGroupPreset extends
+      com.google.protobuf.GeneratedMessage
+      implements MmConfigGroupPresetOrBuilder {
+    // Use MmConfigGroupPreset.newBuilder() to construct.
+    private MmConfigGroupPreset(Builder builder) {
+      super(builder);
+    }
+    private MmConfigGroupPreset(boolean noInit) {}
+    
+    private static final MmConfigGroupPreset defaultInstance;
+    public static MmConfigGroupPreset getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public MmConfigGroupPreset getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string presetId = 1;
+    public static final int PRESETID_FIELD_NUMBER = 1;
+    private java.lang.Object presetId_;
+    public boolean hasPresetId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getPresetId() {
+      java.lang.Object ref = presetId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          presetId_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getPresetIdBytes() {
+      java.lang.Object ref = presetId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        presetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string presetLabel = 2;
+    public static final int PRESETLABEL_FIELD_NUMBER = 2;
+    private java.lang.Object presetLabel_;
+    public boolean hasPresetLabel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getPresetLabel() {
+      java.lang.Object ref = presetLabel_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          presetLabel_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getPresetLabelBytes() {
+      java.lang.Object ref = presetLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        presetLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // repeated string presetPropertyLabels = 3;
+    public static final int PRESETPROPERTYLABELS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList presetPropertyLabels_;
+    public java.util.List<String>
+        getPresetPropertyLabelsList() {
+      return presetPropertyLabels_;
+    }
+    public int getPresetPropertyLabelsCount() {
+      return presetPropertyLabels_.size();
+    }
+    public String getPresetPropertyLabels(int index) {
+      return presetPropertyLabels_.get(index);
+    }
+    
+    // repeated string presetPropertyValues = 4;
+    public static final int PRESETPROPERTYVALUES_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList presetPropertyValues_;
+    public java.util.List<String>
+        getPresetPropertyValuesList() {
+      return presetPropertyValues_;
+    }
+    public int getPresetPropertyValuesCount() {
+      return presetPropertyValues_.size();
+    }
+    public String getPresetPropertyValues(int index) {
+      return presetPropertyValues_.get(index);
+    }
+    
+    private void initFields() {
+      presetId_ = "";
+      presetLabel_ = "";
+      presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasPresetId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPresetLabel()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getPresetIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getPresetLabelBytes());
+      }
+      for (int i = 0; i < presetPropertyLabels_.size(); i++) {
+        output.writeBytes(3, presetPropertyLabels_.getByteString(i));
+      }
+      for (int i = 0; i < presetPropertyValues_.size(); i++) {
+        output.writeBytes(4, presetPropertyValues_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getPresetIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getPresetLabelBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < presetPropertyLabels_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(presetPropertyLabels_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getPresetPropertyLabelsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < presetPropertyValues_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(presetPropertyValues_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getPresetPropertyValuesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPresetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable;
+      }
+      
+      // Construct using org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        presetId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        presetLabel_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.getDescriptor();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset getDefaultInstanceForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.getDefaultInstance();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset build() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset buildPartial() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset result = new org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.presetId_ = presetId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.presetLabel_ = presetLabel_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          presetPropertyLabels_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              presetPropertyLabels_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.presetPropertyLabels_ = presetPropertyLabels_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          presetPropertyValues_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              presetPropertyValues_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.presetPropertyValues_ = presetPropertyValues_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset) {
+          return mergeFrom((org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset other) {
+        if (other == org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.getDefaultInstance()) return this;
+        if (other.hasPresetId()) {
+          setPresetId(other.getPresetId());
+        }
+        if (other.hasPresetLabel()) {
+          setPresetLabel(other.getPresetLabel());
+        }
+        if (!other.presetPropertyLabels_.isEmpty()) {
+          if (presetPropertyLabels_.isEmpty()) {
+            presetPropertyLabels_ = other.presetPropertyLabels_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePresetPropertyLabelsIsMutable();
+            presetPropertyLabels_.addAll(other.presetPropertyLabels_);
+          }
+          onChanged();
+        }
+        if (!other.presetPropertyValues_.isEmpty()) {
+          if (presetPropertyValues_.isEmpty()) {
+            presetPropertyValues_ = other.presetPropertyValues_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePresetPropertyValuesIsMutable();
+            presetPropertyValues_.addAll(other.presetPropertyValues_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasPresetId()) {
+          
+          return false;
+        }
+        if (!hasPresetLabel()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              presetId_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              presetLabel_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              ensurePresetPropertyLabelsIsMutable();
+              presetPropertyLabels_.add(input.readBytes());
+              break;
+            }
+            case 34: {
+              ensurePresetPropertyValuesIsMutable();
+              presetPropertyValues_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string presetId = 1;
+      private java.lang.Object presetId_ = "";
+      public boolean hasPresetId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getPresetId() {
+        java.lang.Object ref = presetId_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          presetId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setPresetId(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        presetId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPresetId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        presetId_ = getDefaultInstance().getPresetId();
+        onChanged();
+        return this;
+      }
+      void setPresetId(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        presetId_ = value;
+        onChanged();
+      }
+      
+      // required string presetLabel = 2;
+      private java.lang.Object presetLabel_ = "";
+      public boolean hasPresetLabel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getPresetLabel() {
+        java.lang.Object ref = presetLabel_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          presetLabel_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setPresetLabel(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        presetLabel_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPresetLabel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        presetLabel_ = getDefaultInstance().getPresetLabel();
+        onChanged();
+        return this;
+      }
+      void setPresetLabel(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        presetLabel_ = value;
+        onChanged();
+      }
+      
+      // repeated string presetPropertyLabels = 3;
+      private com.google.protobuf.LazyStringList presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePresetPropertyLabelsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          presetPropertyLabels_ = new com.google.protobuf.LazyStringArrayList(presetPropertyLabels_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      public java.util.List<String>
+          getPresetPropertyLabelsList() {
+        return java.util.Collections.unmodifiableList(presetPropertyLabels_);
+      }
+      public int getPresetPropertyLabelsCount() {
+        return presetPropertyLabels_.size();
+      }
+      public String getPresetPropertyLabels(int index) {
+        return presetPropertyLabels_.get(index);
+      }
+      public Builder setPresetPropertyLabels(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyLabelsIsMutable();
+        presetPropertyLabels_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addPresetPropertyLabels(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyLabelsIsMutable();
+        presetPropertyLabels_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllPresetPropertyLabels(
+          java.lang.Iterable<String> values) {
+        ensurePresetPropertyLabelsIsMutable();
+        super.addAll(values, presetPropertyLabels_);
+        onChanged();
+        return this;
+      }
+      public Builder clearPresetPropertyLabels() {
+        presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      void addPresetPropertyLabels(com.google.protobuf.ByteString value) {
+        ensurePresetPropertyLabelsIsMutable();
+        presetPropertyLabels_.add(value);
+        onChanged();
+      }
+      
+      // repeated string presetPropertyValues = 4;
+      private com.google.protobuf.LazyStringList presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePresetPropertyValuesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          presetPropertyValues_ = new com.google.protobuf.LazyStringArrayList(presetPropertyValues_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      public java.util.List<String>
+          getPresetPropertyValuesList() {
+        return java.util.Collections.unmodifiableList(presetPropertyValues_);
+      }
+      public int getPresetPropertyValuesCount() {
+        return presetPropertyValues_.size();
+      }
+      public String getPresetPropertyValues(int index) {
+        return presetPropertyValues_.get(index);
+      }
+      public Builder setPresetPropertyValues(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyValuesIsMutable();
+        presetPropertyValues_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addPresetPropertyValues(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyValuesIsMutable();
+        presetPropertyValues_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllPresetPropertyValues(
+          java.lang.Iterable<String> values) {
+        ensurePresetPropertyValuesIsMutable();
+        super.addAll(values, presetPropertyValues_);
+        onChanged();
+        return this;
+      }
+      public Builder clearPresetPropertyValues() {
+        presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      void addPresetPropertyValues(com.google.protobuf.ByteString value) {
+        ensurePresetPropertyValuesIsMutable();
+        presetPropertyValues_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:org.ratatosk.mmrest.data.MmConfigGroupPreset)
+    }
+    
+    static {
+      defaultInstance = new MmConfigGroupPreset(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroupPreset)
+  }
+  
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_org_ratatosk_mmrest_data_MmDevicesListing_descriptor;
   private static
@@ -2429,6 +4571,21 @@ public final class MmAnywhere {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_ratatosk_mmrest_data_MmDeviceProperty_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_ratatosk_mmrest_data_MmConfigGroups_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_ratatosk_mmrest_data_MmConfigGroup_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2448,9 +4605,19 @@ public final class MmAnywhere {
       "t.data.MmDeviceProperty\"\177\n\020MmDevicePrope" +
       "rty\022\022\n\npropertyId\030\001 \002(\t\022\025\n\rpropertyValue" +
       "\030\002 \002(\t\022\025\n\rpropertyLabel\030\003 \002(\t\022\024\n\014propert",
-      "yType\030\004 \002(\t\022\023\n\013propertyUrl\030\005 \002(\t*Q\n\017MmPr" +
-      "opertyTypes\022\r\n\tUNDEFINED\020\000\022\013\n\007BOOLEAN\020\001\022" +
-      "\013\n\007INTEGER\020\002\022\t\n\005FLOAT\020\003\022\n\n\006STRING\020\004"
+      "yType\030\004 \002(\t\022\023\n\013propertyUrl\030\005 \002(\t\"Q\n\016MmCo" +
+      "nfigGroups\022?\n\016mmConfigGroups\030\001 \003(\0132\'.org" +
+      ".ratatosk.mmrest.data.MmConfigGroup\"\242\001\n\r" +
+      "MmConfigGroup\022\025\n\rconfigGroupId\030\001 \002(\t\022\030\n\020" +
+      "configGroupLabel\030\002 \002(\t\022I\n\022configGroupPre" +
+      "sets\030\003 \003(\0132-.org.ratatosk.mmrest.data.Mm" +
+      "ConfigGroupPreset\022\025\n\rcurrentPreset\030\004 \002(\t" +
+      "\"x\n\023MmConfigGroupPreset\022\020\n\010presetId\030\001 \002(" +
+      "\t\022\023\n\013presetLabel\030\002 \002(\t\022\034\n\024presetProperty" +
+      "Labels\030\003 \003(\t\022\034\n\024presetPropertyValues\030\004 \003",
+      "(\t*Q\n\017MmPropertyTypes\022\r\n\tUNDEFINED\020\000\022\013\n\007" +
+      "BOOLEAN\020\001\022\013\n\007INTEGER\020\002\022\t\n\005FLOAT\020\003\022\n\n\006STR" +
+      "ING\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2481,6 +4648,30 @@ public final class MmAnywhere {
               new java.lang.String[] { "PropertyId", "PropertyValue", "PropertyLabel", "PropertyType", "PropertyUrl", },
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder.class);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroups_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor,
+              new java.lang.String[] { "MmConfigGroups", },
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.class,
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.Builder.class);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroup_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor,
+              new java.lang.String[] { "ConfigGroupId", "ConfigGroupLabel", "ConfigGroupPresets", "CurrentPreset", },
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.class,
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder.class);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor,
+              new java.lang.String[] { "PresetId", "PresetLabel", "PresetPropertyLabels", "PresetPropertyValues", },
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.class,
+              org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder.class);
           return null;
         }
       };

@@ -6,7 +6,9 @@ package org.mm_anywhere.app;
 import java.util.ArrayList;
 import java.util.List;
 
+import mmcorej.Configuration;
 import mmcorej.DeviceType;
+import mmcorej.PropertySetting;
 import mmcorej.PropertyType;
 import mmcorej.StrVector;
 
@@ -14,6 +16,9 @@ import org.devalbo.data.jackson.Command;
 import org.devalbo.data.jackson.Device;
 import org.devalbo.data.jackson.Devices;
 import org.devalbo.data.jackson.Property;
+import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup;
+import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset;
+import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups;
 
 /**
  * @author ajb
@@ -82,6 +87,49 @@ public class MmDevalboConverter {
   
   public static void setPropertyValue(String device, String property, String value) throws Exception {
   	MmAnywherePlugin.getMmCore().setProperty(device, property, value);
+  }
+  
+  public static MmConfigGroups getAllMmConfigurations() {
+  	List<MmConfigGroup> mmConfigGroups = new ArrayList<MmConfigGroup>();
+    for (String cfgGroup : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getAvailableConfigGroups())) {
+      try {
+      	List<MmConfigGroupPreset> mmConfigGroupPresets = new ArrayList<MmConfigGroupPreset>();
+      	for(String config : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getAvailableConfigs(cfgGroup))) {
+	      		Configuration cfgData = MmAnywherePlugin.getMmCore().getConfigData(cfgGroup, config);
+	      		List<String> configPropertyLabels = new ArrayList<String>();
+	      		List<String> configPropertyValues = new ArrayList<String>();
+	      		for (int i = 0; i < cfgData.size(); i++) {
+	      			PropertySetting setting = cfgData.getSetting(i);
+	      			configPropertyLabels.add(setting.getPropertyName());
+	      			configPropertyValues.add(setting.getPropertyValue());
+	      		}
+	      		MmConfigGroupPreset mmConfigGroupPreset = MmConfigGroupPreset.newBuilder().
+	      			setPresetId(config).
+	      			setPresetLabel(config).
+	      			addAllPresetPropertyLabels(configPropertyLabels).
+	      			addAllPresetPropertyValues(configPropertyValues).
+	      			build();
+	      		mmConfigGroupPresets.add(mmConfigGroupPreset);
+      	}
+      	String currentPreset = MmAnywherePlugin.getMmCore().getCurrentConfig(cfgGroup);
+				MmConfigGroup mmConfigGroup = MmConfigGroup.newBuilder().
+      		setConfigGroupId(cfgGroup).
+      		setConfigGroupLabel(cfgGroup).
+      		setCurrentPreset(currentPreset).
+      		addAllConfigGroupPresets(mmConfigGroupPresets).
+      		build();
+				mmConfigGroups.add(mmConfigGroup);
+				
+      } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+    
+    return MmConfigGroups.newBuilder().
+    	addAllMmConfigGroups(mmConfigGroups).
+    	build();
+
   }
   
 }

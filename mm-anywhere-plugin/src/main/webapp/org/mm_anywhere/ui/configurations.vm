@@ -2,26 +2,64 @@
 <html xmlns='http://www.w3.org/1999/xhtml' >
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link type="text/css" rel="stylesheet" href="/ui/css/mmrest.css">
+    <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
+    <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
+    <script src="/mm/ui/js/bootstrap.js"></script>
     <title>MMRest - Configurations</title>
   </head>
 
   <body>
-    <div id="container">
-	  <div id="header">
-        <img src="/ui/images/increminute_header_transparent.png" alt="MMRest logo"></img>
-    </div>  <!-- end #header -->
-	  <div id="navbar">
-	    <ul>
-		  <li><a href="devices.vm">Devices</a></li>
-		  <li><a href="configurations.vm" class="active_page">Configurations</a></li>
-		  <li><a href="acquisition.vm">Acquisition</a></li>
-		</ul>
-	  </div>  <!-- end #navbar -->
-	  <div id="sidebar">
-	  </div>  <!-- end #sidebar -->
-	  <div id="content">
-	  </div>  <!-- end #content -->
-	  </div>  <!-- end #container -->
+    #include("/org/mm_anywhere/ui/header.vm")
+    
+    <div class="container" id="content">
+	    <header class="jumbotron subhead" id="overview">
+	      <h1>Configurations</h1>
+	    </header>
+      
+      #foreach( $cfg in $configurations )
+      <div class="accordion-heading">
+        <div class="row">
+          <div class="span2 offset1">
+          <h3><a class="accordion-toggle" data-toggle="collapse" href="#collapse$foreach.count">
+            $cfg.getConfigGroupLabel()
+          </a></h3>
+          </div>
+          <div class="span2 btn-group">
+	          <button class="btn btn-large">$cfg.getCurrentPreset()</button>
+	          <button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+	          <ul class="dropdown-menu">
+	            #foreach( $preset in $cfg.getConfigGroupPresetsList() )
+	              <li><a href="#">$preset.getPresetLabel()</a></li>
+	            #end
+	          </ul>
+          </div>
+        </div>
+          
+	     <div id="collapse$foreach.count" class="accordion-body collapse" style="height: auto; ">
+	       <div class="accordion-inner">
+           #foreach( $preset in $cfg.getConfigGroupPresetsList() )
+             <ul>
+              #foreach( $propLabel in $preset.getPresetPropertyLabelsList() )
+                <li>$preset.getPresetLabel():$propLabel:$preset.getPresetPropertyValues($foreach.index)</li>              
+              #end
+             </ul>
+           #end
+	       </div>
+	     </div>
+
+		  </div>
+      #end
+    
+    </div>  <!-- end #container -->
+        
+    <script>
+      $(function () {
+    	  $('.dropdown-toggle').dropdown()
+      })
+      $(".collapse").collapse({
+    	  toggle: false
+      })
+    </script>
+    
   </body>
 </html>
