@@ -279,15 +279,19 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 	}
 
 	public static String makeDeviceUrl(String deviceId) {
-		return _mmRestPlugin.getHostPath() + "mm/dev/" + deviceId;
+		return _mmRestPlugin.getHostPath() + "mm/devices/" + deviceId;
 	}
 
 	public static String makePropertyUrl(String deviceId, String propertyId) {
-		return _mmRestPlugin.getHostPath() + "mm/dev/" + deviceId + "/" + propertyId;
+		return _mmRestPlugin.getHostPath() + "mm/devices/" + deviceId + "/properties/" + propertyId;
 	}
 	
 	public static String makeCommandUrl(String deviceId, String commandId) {
-		return _mmRestPlugin.getHostPath() + "mm/dev/" + deviceId + "/commands/" + commandId;
+		return _mmRestPlugin.getHostPath() + "mm/devices/" + deviceId + "/commands/" + commandId;
+	}
+	
+	public static String makeConfigGroupUrl(String configGroupId) {
+		return _mmRestPlugin.getHostPath() + "mm/configurations/" + configGroupId;
 	}
 
 

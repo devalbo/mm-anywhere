@@ -668,14 +668,24 @@ public final class MmAnywhere {
     boolean hasDeviceUrl();
     String getDeviceUrl();
     
-    // repeated .org.ratatosk.mmrest.data.MmDeviceProperty mmDeviceProperties = 5;
+    // repeated .org.ratatosk.mmrest.data.MmDeviceProperty deviceProperties = 5;
     java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> 
-        getMmDevicePropertiesList();
-    org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getMmDeviceProperties(int index);
-    int getMmDevicePropertiesCount();
+        getDevicePropertiesList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getDeviceProperties(int index);
+    int getDevicePropertiesCount();
     java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> 
-        getMmDevicePropertiesOrBuilderList();
-    org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getMmDevicePropertiesOrBuilder(
+        getDevicePropertiesOrBuilderList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getDevicePropertiesOrBuilder(
+        int index);
+    
+    // repeated .org.ratatosk.mmrest.data.MmDeviceCommand deviceCommands = 6;
+    java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> 
+        getDeviceCommandsList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand getDeviceCommands(int index);
+    int getDeviceCommandsCount();
+    java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder> 
+        getDeviceCommandsOrBuilderList();
+    org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder getDeviceCommandsOrBuilder(
         int index);
   }
   public static final class MmDeviceListing extends
@@ -835,25 +845,46 @@ public final class MmAnywhere {
       }
     }
     
-    // repeated .org.ratatosk.mmrest.data.MmDeviceProperty mmDeviceProperties = 5;
-    public static final int MMDEVICEPROPERTIES_FIELD_NUMBER = 5;
-    private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> mmDeviceProperties_;
-    public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> getMmDevicePropertiesList() {
-      return mmDeviceProperties_;
+    // repeated .org.ratatosk.mmrest.data.MmDeviceProperty deviceProperties = 5;
+    public static final int DEVICEPROPERTIES_FIELD_NUMBER = 5;
+    private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> deviceProperties_;
+    public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> getDevicePropertiesList() {
+      return deviceProperties_;
     }
     public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> 
-        getMmDevicePropertiesOrBuilderList() {
-      return mmDeviceProperties_;
+        getDevicePropertiesOrBuilderList() {
+      return deviceProperties_;
     }
-    public int getMmDevicePropertiesCount() {
-      return mmDeviceProperties_.size();
+    public int getDevicePropertiesCount() {
+      return deviceProperties_.size();
     }
-    public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getMmDeviceProperties(int index) {
-      return mmDeviceProperties_.get(index);
+    public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getDeviceProperties(int index) {
+      return deviceProperties_.get(index);
     }
-    public org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getMmDevicePropertiesOrBuilder(
+    public org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getDevicePropertiesOrBuilder(
         int index) {
-      return mmDeviceProperties_.get(index);
+      return deviceProperties_.get(index);
+    }
+    
+    // repeated .org.ratatosk.mmrest.data.MmDeviceCommand deviceCommands = 6;
+    public static final int DEVICECOMMANDS_FIELD_NUMBER = 6;
+    private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> deviceCommands_;
+    public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> getDeviceCommandsList() {
+      return deviceCommands_;
+    }
+    public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder> 
+        getDeviceCommandsOrBuilderList() {
+      return deviceCommands_;
+    }
+    public int getDeviceCommandsCount() {
+      return deviceCommands_.size();
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand getDeviceCommands(int index) {
+      return deviceCommands_.get(index);
+    }
+    public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder getDeviceCommandsOrBuilder(
+        int index) {
+      return deviceCommands_.get(index);
     }
     
     private void initFields() {
@@ -861,7 +892,8 @@ public final class MmAnywhere {
       deviceLabel_ = "";
       deviceType_ = "";
       deviceUrl_ = "";
-      mmDeviceProperties_ = java.util.Collections.emptyList();
+      deviceProperties_ = java.util.Collections.emptyList();
+      deviceCommands_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -884,8 +916,14 @@ public final class MmAnywhere {
         memoizedIsInitialized = 0;
         return false;
       }
-      for (int i = 0; i < getMmDevicePropertiesCount(); i++) {
-        if (!getMmDeviceProperties(i).isInitialized()) {
+      for (int i = 0; i < getDevicePropertiesCount(); i++) {
+        if (!getDeviceProperties(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getDeviceCommandsCount(); i++) {
+        if (!getDeviceCommands(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -909,8 +947,11 @@ public final class MmAnywhere {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, getDeviceUrlBytes());
       }
-      for (int i = 0; i < mmDeviceProperties_.size(); i++) {
-        output.writeMessage(5, mmDeviceProperties_.get(i));
+      for (int i = 0; i < deviceProperties_.size(); i++) {
+        output.writeMessage(5, deviceProperties_.get(i));
+      }
+      for (int i = 0; i < deviceCommands_.size(); i++) {
+        output.writeMessage(6, deviceCommands_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -937,9 +978,13 @@ public final class MmAnywhere {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, getDeviceUrlBytes());
       }
-      for (int i = 0; i < mmDeviceProperties_.size(); i++) {
+      for (int i = 0; i < deviceProperties_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, mmDeviceProperties_.get(i));
+          .computeMessageSize(5, deviceProperties_.get(i));
+      }
+      for (int i = 0; i < deviceCommands_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, deviceCommands_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1057,7 +1102,8 @@ public final class MmAnywhere {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getMmDevicePropertiesFieldBuilder();
+          getDevicePropertiesFieldBuilder();
+          getDeviceCommandsFieldBuilder();
         }
       }
       private static Builder create() {
@@ -1074,11 +1120,17 @@ public final class MmAnywhere {
         bitField0_ = (bitField0_ & ~0x00000004);
         deviceUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        if (mmDevicePropertiesBuilder_ == null) {
-          mmDeviceProperties_ = java.util.Collections.emptyList();
+        if (devicePropertiesBuilder_ == null) {
+          deviceProperties_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          mmDevicePropertiesBuilder_.clear();
+          devicePropertiesBuilder_.clear();
+        }
+        if (deviceCommandsBuilder_ == null) {
+          deviceCommands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          deviceCommandsBuilder_.clear();
         }
         return this;
       }
@@ -1134,14 +1186,23 @@ public final class MmAnywhere {
           to_bitField0_ |= 0x00000008;
         }
         result.deviceUrl_ = deviceUrl_;
-        if (mmDevicePropertiesBuilder_ == null) {
+        if (devicePropertiesBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            mmDeviceProperties_ = java.util.Collections.unmodifiableList(mmDeviceProperties_);
+            deviceProperties_ = java.util.Collections.unmodifiableList(deviceProperties_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.mmDeviceProperties_ = mmDeviceProperties_;
+          result.deviceProperties_ = deviceProperties_;
         } else {
-          result.mmDeviceProperties_ = mmDevicePropertiesBuilder_.build();
+          result.deviceProperties_ = devicePropertiesBuilder_.build();
+        }
+        if (deviceCommandsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            deviceCommands_ = java.util.Collections.unmodifiableList(deviceCommands_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.deviceCommands_ = deviceCommands_;
+        } else {
+          result.deviceCommands_ = deviceCommandsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1171,29 +1232,55 @@ public final class MmAnywhere {
         if (other.hasDeviceUrl()) {
           setDeviceUrl(other.getDeviceUrl());
         }
-        if (mmDevicePropertiesBuilder_ == null) {
-          if (!other.mmDeviceProperties_.isEmpty()) {
-            if (mmDeviceProperties_.isEmpty()) {
-              mmDeviceProperties_ = other.mmDeviceProperties_;
+        if (devicePropertiesBuilder_ == null) {
+          if (!other.deviceProperties_.isEmpty()) {
+            if (deviceProperties_.isEmpty()) {
+              deviceProperties_ = other.deviceProperties_;
               bitField0_ = (bitField0_ & ~0x00000010);
             } else {
-              ensureMmDevicePropertiesIsMutable();
-              mmDeviceProperties_.addAll(other.mmDeviceProperties_);
+              ensureDevicePropertiesIsMutable();
+              deviceProperties_.addAll(other.deviceProperties_);
             }
             onChanged();
           }
         } else {
-          if (!other.mmDeviceProperties_.isEmpty()) {
-            if (mmDevicePropertiesBuilder_.isEmpty()) {
-              mmDevicePropertiesBuilder_.dispose();
-              mmDevicePropertiesBuilder_ = null;
-              mmDeviceProperties_ = other.mmDeviceProperties_;
+          if (!other.deviceProperties_.isEmpty()) {
+            if (devicePropertiesBuilder_.isEmpty()) {
+              devicePropertiesBuilder_.dispose();
+              devicePropertiesBuilder_ = null;
+              deviceProperties_ = other.deviceProperties_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              mmDevicePropertiesBuilder_ = 
+              devicePropertiesBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getMmDevicePropertiesFieldBuilder() : null;
+                   getDevicePropertiesFieldBuilder() : null;
             } else {
-              mmDevicePropertiesBuilder_.addAllMessages(other.mmDeviceProperties_);
+              devicePropertiesBuilder_.addAllMessages(other.deviceProperties_);
+            }
+          }
+        }
+        if (deviceCommandsBuilder_ == null) {
+          if (!other.deviceCommands_.isEmpty()) {
+            if (deviceCommands_.isEmpty()) {
+              deviceCommands_ = other.deviceCommands_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureDeviceCommandsIsMutable();
+              deviceCommands_.addAll(other.deviceCommands_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.deviceCommands_.isEmpty()) {
+            if (deviceCommandsBuilder_.isEmpty()) {
+              deviceCommandsBuilder_.dispose();
+              deviceCommandsBuilder_ = null;
+              deviceCommands_ = other.deviceCommands_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              deviceCommandsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getDeviceCommandsFieldBuilder() : null;
+            } else {
+              deviceCommandsBuilder_.addAllMessages(other.deviceCommands_);
             }
           }
         }
@@ -1218,8 +1305,14 @@ public final class MmAnywhere {
           
           return false;
         }
-        for (int i = 0; i < getMmDevicePropertiesCount(); i++) {
-          if (!getMmDeviceProperties(i).isInitialized()) {
+        for (int i = 0; i < getDevicePropertiesCount(); i++) {
+          if (!getDeviceProperties(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getDeviceCommandsCount(); i++) {
+          if (!getDeviceCommands(i).isInitialized()) {
             
             return false;
           }
@@ -1273,7 +1366,13 @@ public final class MmAnywhere {
             case 42: {
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder subBuilder = org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
-              addMmDeviceProperties(subBuilder.buildPartial());
+              addDeviceProperties(subBuilder.buildPartial());
+              break;
+            }
+            case 50: {
+              org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder subBuilder = org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addDeviceCommands(subBuilder.buildPartial());
               break;
             }
           }
@@ -1426,190 +1525,376 @@ public final class MmAnywhere {
         onChanged();
       }
       
-      // repeated .org.ratatosk.mmrest.data.MmDeviceProperty mmDeviceProperties = 5;
-      private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> mmDeviceProperties_ =
+      // repeated .org.ratatosk.mmrest.data.MmDeviceProperty deviceProperties = 5;
+      private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> deviceProperties_ =
         java.util.Collections.emptyList();
-      private void ensureMmDevicePropertiesIsMutable() {
+      private void ensureDevicePropertiesIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          mmDeviceProperties_ = new java.util.ArrayList<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty>(mmDeviceProperties_);
+          deviceProperties_ = new java.util.ArrayList<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty>(deviceProperties_);
           bitField0_ |= 0x00000010;
          }
       }
       
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> mmDevicePropertiesBuilder_;
+          org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> devicePropertiesBuilder_;
       
-      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> getMmDevicePropertiesList() {
-        if (mmDevicePropertiesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(mmDeviceProperties_);
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> getDevicePropertiesList() {
+        if (devicePropertiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(deviceProperties_);
         } else {
-          return mmDevicePropertiesBuilder_.getMessageList();
+          return devicePropertiesBuilder_.getMessageList();
         }
       }
-      public int getMmDevicePropertiesCount() {
-        if (mmDevicePropertiesBuilder_ == null) {
-          return mmDeviceProperties_.size();
+      public int getDevicePropertiesCount() {
+        if (devicePropertiesBuilder_ == null) {
+          return deviceProperties_.size();
         } else {
-          return mmDevicePropertiesBuilder_.getCount();
+          return devicePropertiesBuilder_.getCount();
         }
       }
-      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getMmDeviceProperties(int index) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          return mmDeviceProperties_.get(index);
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty getDeviceProperties(int index) {
+        if (devicePropertiesBuilder_ == null) {
+          return deviceProperties_.get(index);
         } else {
-          return mmDevicePropertiesBuilder_.getMessage(index);
+          return devicePropertiesBuilder_.getMessage(index);
         }
       }
-      public Builder setMmDeviceProperties(
+      public Builder setDeviceProperties(
           int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty value) {
-        if (mmDevicePropertiesBuilder_ == null) {
+        if (devicePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.set(index, value);
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.set(index, value);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.setMessage(index, value);
+          devicePropertiesBuilder_.setMessage(index, value);
         }
         return this;
       }
-      public Builder setMmDeviceProperties(
+      public Builder setDeviceProperties(
           int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder builderForValue) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.set(index, builderForValue.build());
+        if (devicePropertiesBuilder_ == null) {
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.set(index, builderForValue.build());
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.setMessage(index, builderForValue.build());
+          devicePropertiesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
-      public Builder addMmDeviceProperties(org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty value) {
-        if (mmDevicePropertiesBuilder_ == null) {
+      public Builder addDeviceProperties(org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty value) {
+        if (devicePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.add(value);
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.add(value);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.addMessage(value);
+          devicePropertiesBuilder_.addMessage(value);
         }
         return this;
       }
-      public Builder addMmDeviceProperties(
+      public Builder addDeviceProperties(
           int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty value) {
-        if (mmDevicePropertiesBuilder_ == null) {
+        if (devicePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.add(index, value);
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.add(index, value);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.addMessage(index, value);
+          devicePropertiesBuilder_.addMessage(index, value);
         }
         return this;
       }
-      public Builder addMmDeviceProperties(
+      public Builder addDeviceProperties(
           org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder builderForValue) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.add(builderForValue.build());
+        if (devicePropertiesBuilder_ == null) {
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.add(builderForValue.build());
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.addMessage(builderForValue.build());
+          devicePropertiesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
-      public Builder addMmDeviceProperties(
+      public Builder addDeviceProperties(
           int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder builderForValue) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.add(index, builderForValue.build());
+        if (devicePropertiesBuilder_ == null) {
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.add(index, builderForValue.build());
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.addMessage(index, builderForValue.build());
+          devicePropertiesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
-      public Builder addAllMmDeviceProperties(
+      public Builder addAllDeviceProperties(
           java.lang.Iterable<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty> values) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          ensureMmDevicePropertiesIsMutable();
-          super.addAll(values, mmDeviceProperties_);
+        if (devicePropertiesBuilder_ == null) {
+          ensureDevicePropertiesIsMutable();
+          super.addAll(values, deviceProperties_);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.addAllMessages(values);
+          devicePropertiesBuilder_.addAllMessages(values);
         }
         return this;
       }
-      public Builder clearMmDeviceProperties() {
-        if (mmDevicePropertiesBuilder_ == null) {
-          mmDeviceProperties_ = java.util.Collections.emptyList();
+      public Builder clearDeviceProperties() {
+        if (devicePropertiesBuilder_ == null) {
+          deviceProperties_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.clear();
+          devicePropertiesBuilder_.clear();
         }
         return this;
       }
-      public Builder removeMmDeviceProperties(int index) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          ensureMmDevicePropertiesIsMutable();
-          mmDeviceProperties_.remove(index);
+      public Builder removeDeviceProperties(int index) {
+        if (devicePropertiesBuilder_ == null) {
+          ensureDevicePropertiesIsMutable();
+          deviceProperties_.remove(index);
           onChanged();
         } else {
-          mmDevicePropertiesBuilder_.remove(index);
+          devicePropertiesBuilder_.remove(index);
         }
         return this;
       }
-      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder getMmDevicePropertiesBuilder(
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder getDevicePropertiesBuilder(
           int index) {
-        return getMmDevicePropertiesFieldBuilder().getBuilder(index);
+        return getDevicePropertiesFieldBuilder().getBuilder(index);
       }
-      public org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getMmDevicePropertiesOrBuilder(
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder getDevicePropertiesOrBuilder(
           int index) {
-        if (mmDevicePropertiesBuilder_ == null) {
-          return mmDeviceProperties_.get(index);  } else {
-          return mmDevicePropertiesBuilder_.getMessageOrBuilder(index);
+        if (devicePropertiesBuilder_ == null) {
+          return deviceProperties_.get(index);  } else {
+          return devicePropertiesBuilder_.getMessageOrBuilder(index);
         }
       }
       public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> 
-           getMmDevicePropertiesOrBuilderList() {
-        if (mmDevicePropertiesBuilder_ != null) {
-          return mmDevicePropertiesBuilder_.getMessageOrBuilderList();
+           getDevicePropertiesOrBuilderList() {
+        if (devicePropertiesBuilder_ != null) {
+          return devicePropertiesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(mmDeviceProperties_);
+          return java.util.Collections.unmodifiableList(deviceProperties_);
         }
       }
-      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder addMmDevicePropertiesBuilder() {
-        return getMmDevicePropertiesFieldBuilder().addBuilder(
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder addDevicePropertiesBuilder() {
+        return getDevicePropertiesFieldBuilder().addBuilder(
             org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.getDefaultInstance());
       }
-      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder addMmDevicePropertiesBuilder(
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder addDevicePropertiesBuilder(
           int index) {
-        return getMmDevicePropertiesFieldBuilder().addBuilder(
+        return getDevicePropertiesFieldBuilder().addBuilder(
             index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.getDefaultInstance());
       }
       public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder> 
-           getMmDevicePropertiesBuilderList() {
-        return getMmDevicePropertiesFieldBuilder().getBuilderList();
+           getDevicePropertiesBuilderList() {
+        return getDevicePropertiesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
           org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder> 
-          getMmDevicePropertiesFieldBuilder() {
-        if (mmDevicePropertiesBuilder_ == null) {
-          mmDevicePropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          getDevicePropertiesFieldBuilder() {
+        if (devicePropertiesBuilder_ == null) {
+          devicePropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDevicePropertyOrBuilder>(
-                  mmDeviceProperties_,
+                  deviceProperties_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
-          mmDeviceProperties_ = null;
+          deviceProperties_ = null;
         }
-        return mmDevicePropertiesBuilder_;
+        return devicePropertiesBuilder_;
+      }
+      
+      // repeated .org.ratatosk.mmrest.data.MmDeviceCommand deviceCommands = 6;
+      private java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> deviceCommands_ =
+        java.util.Collections.emptyList();
+      private void ensureDeviceCommandsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          deviceCommands_ = new java.util.ArrayList<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand>(deviceCommands_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder> deviceCommandsBuilder_;
+      
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> getDeviceCommandsList() {
+        if (deviceCommandsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(deviceCommands_);
+        } else {
+          return deviceCommandsBuilder_.getMessageList();
+        }
+      }
+      public int getDeviceCommandsCount() {
+        if (deviceCommandsBuilder_ == null) {
+          return deviceCommands_.size();
+        } else {
+          return deviceCommandsBuilder_.getCount();
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand getDeviceCommands(int index) {
+        if (deviceCommandsBuilder_ == null) {
+          return deviceCommands_.get(index);
+        } else {
+          return deviceCommandsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setDeviceCommands(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand value) {
+        if (deviceCommandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.set(index, value);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setDeviceCommands(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder builderForValue) {
+        if (deviceCommandsBuilder_ == null) {
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addDeviceCommands(org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand value) {
+        if (deviceCommandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.add(value);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addDeviceCommands(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand value) {
+        if (deviceCommandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.add(index, value);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addDeviceCommands(
+          org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder builderForValue) {
+        if (deviceCommandsBuilder_ == null) {
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.add(builderForValue.build());
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addDeviceCommands(
+          int index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder builderForValue) {
+        if (deviceCommandsBuilder_ == null) {
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllDeviceCommands(
+          java.lang.Iterable<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand> values) {
+        if (deviceCommandsBuilder_ == null) {
+          ensureDeviceCommandsIsMutable();
+          super.addAll(values, deviceCommands_);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearDeviceCommands() {
+        if (deviceCommandsBuilder_ == null) {
+          deviceCommands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeDeviceCommands(int index) {
+        if (deviceCommandsBuilder_ == null) {
+          ensureDeviceCommandsIsMutable();
+          deviceCommands_.remove(index);
+          onChanged();
+        } else {
+          deviceCommandsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder getDeviceCommandsBuilder(
+          int index) {
+        return getDeviceCommandsFieldBuilder().getBuilder(index);
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder getDeviceCommandsOrBuilder(
+          int index) {
+        if (deviceCommandsBuilder_ == null) {
+          return deviceCommands_.get(index);  } else {
+          return deviceCommandsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder> 
+           getDeviceCommandsOrBuilderList() {
+        if (deviceCommandsBuilder_ != null) {
+          return deviceCommandsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(deviceCommands_);
+        }
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder addDeviceCommandsBuilder() {
+        return getDeviceCommandsFieldBuilder().addBuilder(
+            org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.getDefaultInstance());
+      }
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder addDeviceCommandsBuilder(
+          int index) {
+        return getDeviceCommandsFieldBuilder().addBuilder(
+            index, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.getDefaultInstance());
+      }
+      public java.util.List<org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder> 
+           getDeviceCommandsBuilderList() {
+        return getDeviceCommandsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder> 
+          getDeviceCommandsFieldBuilder() {
+        if (deviceCommandsBuilder_ == null) {
+          deviceCommandsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder, org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder>(
+                  deviceCommands_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          deviceCommands_ = null;
+        }
+        return deviceCommandsBuilder_;
       }
       
       // @@protoc_insertion_point(builder_scope:org.ratatosk.mmrest.data.MmDeviceListing)
@@ -2414,6 +2699,593 @@ public final class MmAnywhere {
     // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceProperty)
   }
   
+  public interface MmDeviceCommandOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string commandId = 1;
+    boolean hasCommandId();
+    String getCommandId();
+    
+    // required string commandLabel = 2;
+    boolean hasCommandLabel();
+    String getCommandLabel();
+    
+    // required string commandUrl = 3;
+    boolean hasCommandUrl();
+    String getCommandUrl();
+  }
+  public static final class MmDeviceCommand extends
+      com.google.protobuf.GeneratedMessage
+      implements MmDeviceCommandOrBuilder {
+    // Use MmDeviceCommand.newBuilder() to construct.
+    private MmDeviceCommand(Builder builder) {
+      super(builder);
+    }
+    private MmDeviceCommand(boolean noInit) {}
+    
+    private static final MmDeviceCommand defaultInstance;
+    public static MmDeviceCommand getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public MmDeviceCommand getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string commandId = 1;
+    public static final int COMMANDID_FIELD_NUMBER = 1;
+    private java.lang.Object commandId_;
+    public boolean hasCommandId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getCommandId() {
+      java.lang.Object ref = commandId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          commandId_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCommandIdBytes() {
+      java.lang.Object ref = commandId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        commandId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string commandLabel = 2;
+    public static final int COMMANDLABEL_FIELD_NUMBER = 2;
+    private java.lang.Object commandLabel_;
+    public boolean hasCommandLabel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getCommandLabel() {
+      java.lang.Object ref = commandLabel_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          commandLabel_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCommandLabelBytes() {
+      java.lang.Object ref = commandLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        commandLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string commandUrl = 3;
+    public static final int COMMANDURL_FIELD_NUMBER = 3;
+    private java.lang.Object commandUrl_;
+    public boolean hasCommandUrl() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getCommandUrl() {
+      java.lang.Object ref = commandUrl_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          commandUrl_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCommandUrlBytes() {
+      java.lang.Object ref = commandUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        commandUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      commandId_ = "";
+      commandLabel_ = "";
+      commandUrl_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasCommandId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCommandLabel()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCommandUrl()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getCommandIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getCommandLabelBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getCommandUrlBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getCommandIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getCommandLabelBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getCommandUrlBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.ratatosk.mmrest.data.MmAnywhere.internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_fieldAccessorTable;
+      }
+      
+      // Construct using org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        commandId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        commandLabel_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        commandUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.getDescriptor();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand getDefaultInstanceForType() {
+        return org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.getDefaultInstance();
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand build() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand buildPartial() {
+        org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand result = new org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.commandId_ = commandId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.commandLabel_ = commandLabel_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.commandUrl_ = commandUrl_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand) {
+          return mergeFrom((org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand other) {
+        if (other == org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.getDefaultInstance()) return this;
+        if (other.hasCommandId()) {
+          setCommandId(other.getCommandId());
+        }
+        if (other.hasCommandLabel()) {
+          setCommandLabel(other.getCommandLabel());
+        }
+        if (other.hasCommandUrl()) {
+          setCommandUrl(other.getCommandUrl());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasCommandId()) {
+          
+          return false;
+        }
+        if (!hasCommandLabel()) {
+          
+          return false;
+        }
+        if (!hasCommandUrl()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              commandId_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              commandLabel_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              commandUrl_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string commandId = 1;
+      private java.lang.Object commandId_ = "";
+      public boolean hasCommandId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getCommandId() {
+        java.lang.Object ref = commandId_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          commandId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCommandId(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        commandId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCommandId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        commandId_ = getDefaultInstance().getCommandId();
+        onChanged();
+        return this;
+      }
+      void setCommandId(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        commandId_ = value;
+        onChanged();
+      }
+      
+      // required string commandLabel = 2;
+      private java.lang.Object commandLabel_ = "";
+      public boolean hasCommandLabel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getCommandLabel() {
+        java.lang.Object ref = commandLabel_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          commandLabel_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCommandLabel(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        commandLabel_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCommandLabel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        commandLabel_ = getDefaultInstance().getCommandLabel();
+        onChanged();
+        return this;
+      }
+      void setCommandLabel(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        commandLabel_ = value;
+        onChanged();
+      }
+      
+      // required string commandUrl = 3;
+      private java.lang.Object commandUrl_ = "";
+      public boolean hasCommandUrl() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getCommandUrl() {
+        java.lang.Object ref = commandUrl_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          commandUrl_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCommandUrl(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        commandUrl_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCommandUrl() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        commandUrl_ = getDefaultInstance().getCommandUrl();
+        onChanged();
+        return this;
+      }
+      void setCommandUrl(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        commandUrl_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:org.ratatosk.mmrest.data.MmDeviceCommand)
+    }
+    
+    static {
+      defaultInstance = new MmDeviceCommand(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceCommand)
+  }
+  
   public interface MmConfigGroupsOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -3001,6 +3873,10 @@ public final class MmAnywhere {
     // required string currentPreset = 4;
     boolean hasCurrentPreset();
     String getCurrentPreset();
+    
+    // required string configGroupUrl = 5;
+    boolean hasConfigGroupUrl();
+    String getConfigGroupUrl();
   }
   public static final class MmConfigGroup extends
       com.google.protobuf.GeneratedMessage
@@ -3148,11 +4024,44 @@ public final class MmAnywhere {
       }
     }
     
+    // required string configGroupUrl = 5;
+    public static final int CONFIGGROUPURL_FIELD_NUMBER = 5;
+    private java.lang.Object configGroupUrl_;
+    public boolean hasConfigGroupUrl() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getConfigGroupUrl() {
+      java.lang.Object ref = configGroupUrl_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          configGroupUrl_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getConfigGroupUrlBytes() {
+      java.lang.Object ref = configGroupUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        configGroupUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
       configGroupId_ = "";
       configGroupLabel_ = "";
       configGroupPresets_ = java.util.Collections.emptyList();
       currentPreset_ = "";
+      configGroupUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3168,6 +4077,10 @@ public final class MmAnywhere {
         return false;
       }
       if (!hasCurrentPreset()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasConfigGroupUrl()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3196,6 +4109,9 @@ public final class MmAnywhere {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(4, getCurrentPresetBytes());
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(5, getConfigGroupUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -3220,6 +4136,10 @@ public final class MmAnywhere {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, getCurrentPresetBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getConfigGroupUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3358,6 +4278,8 @@ public final class MmAnywhere {
         }
         currentPreset_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
+        configGroupUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       
@@ -3417,6 +4339,10 @@ public final class MmAnywhere {
           to_bitField0_ |= 0x00000004;
         }
         result.currentPreset_ = currentPreset_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.configGroupUrl_ = configGroupUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3468,6 +4394,9 @@ public final class MmAnywhere {
         if (other.hasCurrentPreset()) {
           setCurrentPreset(other.getCurrentPreset());
         }
+        if (other.hasConfigGroupUrl()) {
+          setConfigGroupUrl(other.getConfigGroupUrl());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3482,6 +4411,10 @@ public final class MmAnywhere {
           return false;
         }
         if (!hasCurrentPreset()) {
+          
+          return false;
+        }
+        if (!hasConfigGroupUrl()) {
           
           return false;
         }
@@ -3536,6 +4469,11 @@ public final class MmAnywhere {
             case 34: {
               bitField0_ |= 0x00000008;
               currentPreset_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              configGroupUrl_ = input.readBytes();
               break;
             }
           }
@@ -3835,6 +4773,42 @@ public final class MmAnywhere {
       void setCurrentPreset(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000008;
         currentPreset_ = value;
+        onChanged();
+      }
+      
+      // required string configGroupUrl = 5;
+      private java.lang.Object configGroupUrl_ = "";
+      public boolean hasConfigGroupUrl() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getConfigGroupUrl() {
+        java.lang.Object ref = configGroupUrl_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          configGroupUrl_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setConfigGroupUrl(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        configGroupUrl_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearConfigGroupUrl() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        configGroupUrl_ = getDefaultInstance().getConfigGroupUrl();
+        onChanged();
+        return this;
+      }
+      void setConfigGroupUrl(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        configGroupUrl_ = value;
         onChanged();
       }
       
@@ -4572,6 +5546,11 @@ public final class MmAnywhere {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_ratatosk_mmrest_data_MmDeviceProperty_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -4598,26 +5577,30 @@ public final class MmAnywhere {
       "\n\020MmAnywhere.proto\022\030org.ratatosk.mmrest." +
       "data\"W\n\020MmDevicesListing\022C\n\020mmDeviceList" +
       "ings\030\001 \003(\0132).org.ratatosk.mmrest.data.Mm" +
-      "DeviceListing\"\247\001\n\017MmDeviceListing\022\020\n\010dev" +
+      "DeviceListing\"\350\001\n\017MmDeviceListing\022\020\n\010dev" +
       "iceId\030\001 \002(\t\022\023\n\013deviceLabel\030\002 \002(\t\022\022\n\ndevi" +
-      "ceType\030\003 \002(\t\022\021\n\tdeviceUrl\030\004 \002(\t\022F\n\022mmDev" +
-      "iceProperties\030\005 \003(\0132*.org.ratatosk.mmres" +
-      "t.data.MmDeviceProperty\"\177\n\020MmDevicePrope" +
-      "rty\022\022\n\npropertyId\030\001 \002(\t\022\025\n\rpropertyValue" +
-      "\030\002 \002(\t\022\025\n\rpropertyLabel\030\003 \002(\t\022\024\n\014propert",
-      "yType\030\004 \002(\t\022\023\n\013propertyUrl\030\005 \002(\t\"Q\n\016MmCo" +
-      "nfigGroups\022?\n\016mmConfigGroups\030\001 \003(\0132\'.org" +
-      ".ratatosk.mmrest.data.MmConfigGroup\"\242\001\n\r" +
-      "MmConfigGroup\022\025\n\rconfigGroupId\030\001 \002(\t\022\030\n\020" +
-      "configGroupLabel\030\002 \002(\t\022I\n\022configGroupPre" +
-      "sets\030\003 \003(\0132-.org.ratatosk.mmrest.data.Mm" +
-      "ConfigGroupPreset\022\025\n\rcurrentPreset\030\004 \002(\t" +
-      "\"x\n\023MmConfigGroupPreset\022\020\n\010presetId\030\001 \002(" +
-      "\t\022\023\n\013presetLabel\030\002 \002(\t\022\034\n\024presetProperty" +
-      "Labels\030\003 \003(\t\022\034\n\024presetPropertyValues\030\004 \003",
-      "(\t*Q\n\017MmPropertyTypes\022\r\n\tUNDEFINED\020\000\022\013\n\007" +
-      "BOOLEAN\020\001\022\013\n\007INTEGER\020\002\022\t\n\005FLOAT\020\003\022\n\n\006STR" +
-      "ING\020\004"
+      "ceType\030\003 \002(\t\022\021\n\tdeviceUrl\030\004 \002(\t\022D\n\020devic" +
+      "eProperties\030\005 \003(\0132*.org.ratatosk.mmrest." +
+      "data.MmDeviceProperty\022A\n\016deviceCommands\030" +
+      "\006 \003(\0132).org.ratatosk.mmrest.data.MmDevic" +
+      "eCommand\"\177\n\020MmDeviceProperty\022\022\n\nproperty",
+      "Id\030\001 \002(\t\022\025\n\rpropertyValue\030\002 \002(\t\022\025\n\rprope" +
+      "rtyLabel\030\003 \002(\t\022\024\n\014propertyType\030\004 \002(\t\022\023\n\013" +
+      "propertyUrl\030\005 \002(\t\"N\n\017MmDeviceCommand\022\021\n\t" +
+      "commandId\030\001 \002(\t\022\024\n\014commandLabel\030\002 \002(\t\022\022\n" +
+      "\ncommandUrl\030\003 \002(\t\"Q\n\016MmConfigGroups\022?\n\016m" +
+      "mConfigGroups\030\001 \003(\0132\'.org.ratatosk.mmres" +
+      "t.data.MmConfigGroup\"\272\001\n\rMmConfigGroup\022\025" +
+      "\n\rconfigGroupId\030\001 \002(\t\022\030\n\020configGroupLabe" +
+      "l\030\002 \002(\t\022I\n\022configGroupPresets\030\003 \003(\0132-.or" +
+      "g.ratatosk.mmrest.data.MmConfigGroupPres",
+      "et\022\025\n\rcurrentPreset\030\004 \002(\t\022\026\n\016configGroup" +
+      "Url\030\005 \002(\t\"x\n\023MmConfigGroupPreset\022\020\n\010pres" +
+      "etId\030\001 \002(\t\022\023\n\013presetLabel\030\002 \002(\t\022\034\n\024prese" +
+      "tPropertyLabels\030\003 \003(\t\022\034\n\024presetPropertyV" +
+      "alues\030\004 \003(\t*Q\n\017MmPropertyTypes\022\r\n\tUNDEFI" +
+      "NED\020\000\022\013\n\007BOOLEAN\020\001\022\013\n\007INTEGER\020\002\022\t\n\005FLOAT" +
+      "\020\003\022\n\n\006STRING\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -4637,7 +5620,7 @@ public final class MmAnywhere {
           internal_static_org_ratatosk_mmrest_data_MmDeviceListing_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_ratatosk_mmrest_data_MmDeviceListing_descriptor,
-              new java.lang.String[] { "DeviceId", "DeviceLabel", "DeviceType", "DeviceUrl", "MmDeviceProperties", },
+              new java.lang.String[] { "DeviceId", "DeviceLabel", "DeviceType", "DeviceUrl", "DeviceProperties", "DeviceCommands", },
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing.Builder.class);
           internal_static_org_ratatosk_mmrest_data_MmDeviceProperty_descriptor =
@@ -4648,8 +5631,16 @@ public final class MmAnywhere {
               new java.lang.String[] { "PropertyId", "PropertyValue", "PropertyLabel", "PropertyType", "PropertyUrl", },
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty.Builder.class);
-          internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor =
+          internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_descriptor =
             getDescriptor().getMessageTypes().get(3);
+          internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_ratatosk_mmrest_data_MmDeviceCommand_descriptor,
+              new java.lang.String[] { "CommandId", "CommandLabel", "CommandUrl", },
+              org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.class,
+              org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand.Builder.class);
+          internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor =
+            getDescriptor().getMessageTypes().get(4);
           internal_static_org_ratatosk_mmrest_data_MmConfigGroups_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_ratatosk_mmrest_data_MmConfigGroups_descriptor,
@@ -4657,15 +5648,15 @@ public final class MmAnywhere {
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups.Builder.class);
           internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor =
-            getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(5);
           internal_static_org_ratatosk_mmrest_data_MmConfigGroup_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_ratatosk_mmrest_data_MmConfigGroup_descriptor,
-              new java.lang.String[] { "ConfigGroupId", "ConfigGroupLabel", "ConfigGroupPresets", "CurrentPreset", },
+              new java.lang.String[] { "ConfigGroupId", "ConfigGroupLabel", "ConfigGroupPresets", "CurrentPreset", "ConfigGroupUrl", },
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup.Builder.class);
           internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor =
-            getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(6);
           internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor,

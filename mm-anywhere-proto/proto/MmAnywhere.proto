@@ -18,7 +18,8 @@ message MmDeviceListing {
   required string deviceLabel = 2;
   required string deviceType = 3;
   required string deviceUrl = 4;
-  repeated MmDeviceProperty mmDeviceProperties = 5;
+  repeated MmDeviceProperty deviceProperties = 5;
+  repeated MmDeviceCommand deviceCommands = 6;
 }
 
 message MmDeviceProperty {
@@ -27,6 +28,12 @@ message MmDeviceProperty {
   required string propertyLabel = 3;
   required string propertyType = 4;
   required string propertyUrl = 5;
+}
+
+message MmDeviceCommand {
+  required string commandId = 1;
+  required string commandLabel = 2;
+  required string commandUrl = 3;
 }
 
 message MmConfigGroups {
@@ -38,6 +45,7 @@ message MmConfigGroup {
   required string configGroupLabel = 2;
   repeated MmConfigGroupPreset configGroupPresets = 3;
   required string currentPreset = 4;
+  required string configGroupUrl = 5;
 }
 
 message MmConfigGroupPreset {

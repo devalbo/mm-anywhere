@@ -3,97 +3,70 @@
  */
 package org.mm_anywhere.remoteio.resources;
 
-import java.io.StringWriter;
-
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.UriInfo;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import javax.ws.rs.PathParam;
 
-import mmcorej.CMMCore;
-
-import org.mm_anywhere.app.MmCoreUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import com.sun.research.ws.wadl.Resource;
+import org.mm_anywhere.app.MmDevalboConverter;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDevicesListing;
 
 /**
  * @author ajb
  *
  */
-@Path("/devices/")
-public class Devices extends Resource {
+@Path("/devices")
+public class Devices {
 
-	@javax.ws.rs.core.Context UriInfo _uri;
+	@GET 
+	public MmDevicesListing getDevices() {
+		MmDevicesListing devices = MmDevalboConverter.getMmDevicesListing();
+		return devices;
+	}
 
-	@GET
-	@Produces("text/xml")
-	public String getDevices() throws Exception {
-		CMMCore core = MmCoreUtils.getMmCore();
+	@GET 
+	@Path("/{deviceId}")
+	public MmDeviceListing getDevice(@PathParam("deviceId") String deviceId) {
+		try {
+	    return MmDevalboConverter.getMmDeviceListing(deviceId);
+    } catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+    }
+    return null;
+	}
 
-		// Generate a DOM document representing the list of  
-		// items.  
-		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
-		DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
-		Document d = docBuilder.newDocument();
-
-		Element r = d.createElement("devices");  
-		d.appendChild(r);
-		for (String device : MmCoreUtils.getStrVectorIterator(core.getLoadedDevices())) {
-			Element eltItem = d.createElement("device");  
-
-			Element eltName = d.createElement("id");  
-			eltName.appendChild(d.createTextNode(device));  
-			eltItem.appendChild(eltName);  
-
-			Element eltDescription = d.createElement("type");
-			String deviceType = core.getDeviceType(device).toString();
-			eltDescription.appendChild(d.createTextNode(deviceType));  
-			eltItem.appendChild(eltDescription);
-
-			Element eltRoles = d.createElement("applicationRoles");
-			Element eltMmApp = d.createElement("application-MicroManager");
-			Element eltMmRole = d.createElement("role");
-			eltMmRole.appendChild(d.createTextNode(deviceType));
-			eltMmApp.appendChild(eltMmRole);
-			eltRoles.appendChild(eltMmApp);
-			eltItem.appendChild(eltRoles);
-
-			String uriRoot = _uri.getRequestUri().toString();
-			Element eltUri = d.createElement("uri");
-			if (!uriRoot.endsWith("/")) {
-				uriRoot += "/";
-			}
-			eltUri.appendChild(d.createTextNode(uriRoot + device));
-			eltItem.appendChild(eltUri);
-
-			r.appendChild(eltItem);  
-		}  
-		
-		d.normalizeDocument();
-		
-    //set up a transformer
-    TransformerFactory transfac = TransformerFactory.newInstance();
-    Transformer trans = transfac.newTransformer();
-    trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-    trans.setOutputProperty(OutputKeys.INDENT, "yes");
-
-	//create string from xml tree
-    StringWriter sw = new StringWriter();
-    StreamResult result = new StreamResult(sw);
-    DOMSource source = new DOMSource(d);
-    trans.transform(source, result);
-    String xmlString = sw.toString();
-    
-		return xmlString;  
+	@GET 
+	@Path("/{deviceId}/properties/{propertyId}")
+	public MmDeviceProperty getProperty(@PathParam("deviceId") String deviceId, 
+			@PathParam("propertyId") String propertyId) 
+	{ 
+		try {
+	    return MmDevalboConverter.getMmPropertyListing(deviceId, propertyId);
+    } catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+    }
+    return null;
+	}
+	
+	@POST 
+	@Path("/{deviceId}/properties/{propertyId}")
+	@Consumes("application/x-www-form-urlencoded")
+	public void post(@PathParam("deviceId") String deviceId, 
+			@PathParam("propertyId") String propertyId, @FormParam("propVal") String propVal) 
+	{
+		System.out.println("Setting [" + deviceId + "][" + propertyId + "] to " + propVal);
+		try {
+	    MmDevalboConverter.setPropertyValue(deviceId, propertyId, propVal);
+    } catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+    }
 	}
 
 }

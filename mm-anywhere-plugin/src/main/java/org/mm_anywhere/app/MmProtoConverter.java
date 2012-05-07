@@ -40,7 +40,7 @@ public class MmProtoConverter {
       setDeviceUrl("http://" + device).
       setDeviceLabel(device).
       setDeviceType(deviceType.toString()).
-      addAllMmDeviceProperties(getAllMmProperties(device)).
+      addAllDeviceProperties(getAllMmProperties(device)).
       build();
     return deviceListing;
   }

@@ -20,16 +20,16 @@
       
     <div class="tabbable tabs-left">
       <ul id="devTab" class="nav nav-tabs">
-        #foreach( $device in $devices )
-          <li class=""><a href="#dev$foreach.count" data-toggle="tab">$device.deviceLabel</a></li>
+        #foreach( $device in $devices.getMmDeviceListingsList() )
+          <li class=""><a href="#dev$foreach.count" data-toggle="tab">$device.getDeviceLabel()</a></li>
         #end
       </ul>
       <div class="tab-content">
-        #foreach( $device in $devices )
+        #foreach( $device in $devices.getMmDeviceListingsList() )
           <div class="tab-pane" id="dev$foreach.count">
-            <h2>$device.deviceLabel - Properties</h2>
+            <h2>$device.getDeviceLabel() - Properties</h2>
             <ul id="devicePropertiesList" class="unstyled">
-              #foreach( $property in $device.getDeviceProperties() )
+              #foreach( $property in $device.getDevicePropertiesList() )
                 <li>
                 <div><a href="$property.getPropertyUrl()">$property.getPropertyLabel()</a> [$property.getPropertyType()]</div>
                 <form action="$property.getPropertyUrl()" method="post">
@@ -39,9 +39,9 @@
                 </li>
               #end
             </ul>
-            <h2>$device.deviceLabel - Commands</h2>
+            <h2>$device.getDeviceLabel() - Commands</h2>
             <ul id="deviceCommandsList" class="unstyled">
-              #foreach( $command in $device.getDeviceCommands() )
+              #foreach( $command in $device.getDeviceCommandsList() )
                 <li>
                 <button class="btn dev-command" href="$command.getCommandUrl()">$command.getCommandLabel()</button>
                 </li>

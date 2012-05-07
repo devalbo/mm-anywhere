@@ -12,13 +12,13 @@ import mmcorej.PropertySetting;
 import mmcorej.PropertyType;
 import mmcorej.StrVector;
 
-import org.devalbo.data.jackson.Command;
-import org.devalbo.data.jackson.Device;
-import org.devalbo.data.jackson.Devices;
-import org.devalbo.data.jackson.Property;
 import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup;
 import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset;
 import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty;
+import org.ratatosk.mmrest.data.MmAnywhere.MmDevicesListing;
 
 /**
  * @author ajb
@@ -26,8 +26,8 @@ import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups;
  */
 public class MmDevalboConverter {
 
-  public static Devices getMmDevicesListing() {
-    List<Device> mmDevices = new ArrayList<Device>();
+  public static MmDevicesListing getMmDevicesListing() {
+    List<MmDeviceListing> mmDevices = new ArrayList<MmDeviceListing>();
     for (String device : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getLoadedDevices())) {
       try {
         mmDevices.add(getMmDeviceListing(device));
@@ -36,35 +36,43 @@ public class MmDevalboConverter {
         e.printStackTrace();
       }
     }
-    return new Devices(mmDevices);
+    
+    return MmDevicesListing.newBuilder().
+    	addAllMmDeviceListings(mmDevices).
+    	build();
   }
   
-  public static Device getMmDeviceListing(String device) throws Exception {
+  public static MmDeviceListing getMmDeviceListing(String device) throws Exception {
     DeviceType deviceType = MmAnywherePlugin.getMmCore().getDeviceType(device);
-    Device d = new Device(device, 
-        device, 
-        deviceType.toString(),
-        MmAnywherePlugin.makeDeviceUrl(device),
-        getAllMmProperties(device),
-        getAllMmCommands(device));
+    MmDeviceListing d = MmDeviceListing.newBuilder().
+    	setDeviceId(device).
+    	setDeviceLabel(device).
+    	setDeviceType(deviceType.toString()).
+    	setDeviceUrl(MmAnywherePlugin.makeDeviceUrl(device)).
+    	addAllDeviceProperties(getAllMmProperties(device)).
+    	addAllDeviceCommands(getAllMmCommands(device)).
+    	build();
     return d;
   }
 
-  private static List<Property> getAllMmProperties(String device) throws Exception {
+  private static List<MmDeviceProperty> getAllMmProperties(String device) throws Exception {
     StrVector propertyNames = MmAnywherePlugin.getMmCore().getDevicePropertyNames(device);
-    List<Property> mmDeviceProperties = new ArrayList<Property>();
+    List<MmDeviceProperty> mmDeviceProperties = new ArrayList<MmDeviceProperty>();
     for (String propertyName : propertyNames) {
       mmDeviceProperties.add(getMmPropertyListing(device, propertyName));
     }
     return mmDeviceProperties;
   }
   
-  private static List<Command> getAllMmCommands(String deviceId) throws Exception {
-  	List<Command> mmDeviceCommands = new ArrayList<Command>();
+  private static List<MmDeviceCommand> getAllMmCommands(String deviceId) throws Exception {
+  	List<MmDeviceCommand> mmDeviceCommands = new ArrayList<MmDeviceCommand>();
   	DeviceType deviceType = MmAnywherePlugin.getMmCore().getDeviceType(deviceId);
   	if (deviceType == DeviceType.CameraDevice) {
-  		Command snapImageCommand = new Command("snapImage", 
-  				"Snap Image", MmAnywherePlugin.makeCommandUrl(deviceId, "snapImage"));
+  		MmDeviceCommand snapImageCommand = MmDeviceCommand.newBuilder().
+  			setCommandId("snapImage").
+  			setCommandLabel("Snap Image").
+  			setCommandUrl(MmAnywherePlugin.makePropertyUrl(deviceId, "snapImage")).
+				build();
   		mmDeviceCommands.add(snapImageCommand);
 
   	} else if (deviceType == DeviceType.StateDevice) {
@@ -73,15 +81,17 @@ public class MmDevalboConverter {
   	return mmDeviceCommands;
   }
 
-  public static Property getMmPropertyListing(String device, String property) throws Exception {
+  public static MmDeviceProperty getMmPropertyListing(String device, String property) throws Exception {
     PropertyType propertyType = MmAnywherePlugin.getMmCore().getPropertyType(device, property);
     String propertyValue = MmAnywherePlugin.getMmCore().getProperty(device, property);
     
-    Property p = new Property(property, 
-        property, 
-        propertyType.toString(), 
-        propertyValue,
-        MmAnywherePlugin.makePropertyUrl(device, property));
+    MmDeviceProperty p = MmDeviceProperty.newBuilder().
+    	setPropertyId(property).
+    	setPropertyLabel(property).
+    	setPropertyType(propertyType.toString()).
+    	setPropertyValue(propertyValue).
+    	setPropertyUrl(MmAnywherePlugin.makePropertyUrl(device, property)).
+    	build();
     return p;
   }
   
@@ -117,6 +127,7 @@ public class MmDevalboConverter {
       		setConfigGroupLabel(cfgGroup).
       		setCurrentPreset(currentPreset).
       		addAllConfigGroupPresets(mmConfigGroupPresets).
+      		setConfigGroupUrl(MmAnywherePlugin.makeConfigGroupUrl(cfgGroup)).
       		build();
 				mmConfigGroups.add(mmConfigGroup);
 				

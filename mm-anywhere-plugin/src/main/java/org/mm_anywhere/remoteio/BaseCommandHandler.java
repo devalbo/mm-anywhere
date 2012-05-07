@@ -17,6 +17,7 @@ import javax.xml.xpath.XPathFactory;
 
 import mmcorej.CMMCore;
 
+import org.mm_anywhere.app.MmAnywherePlugin;
 import org.mm_anywhere.app.MmCoreUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -56,7 +57,7 @@ public abstract class BaseCommandHandler {
 	}
 	
 	public CMMCore getCore() {
-		return MmCoreUtils.getMmCore();
+		return MmAnywherePlugin.getMmCore();
 	}
 	
 //	public MicroManagerRemoteIoApplication getMmRioApp() {

@@ -29,7 +29,7 @@
 	          <button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
 	          <ul class="dropdown-menu">
 	            #foreach( $preset in $cfg.getConfigGroupPresetsList() )
-	              <li><a href="#">$preset.getPresetLabel()</a></li>
+	              <li><a href="$cfg.getConfigGroupUrl()" class="activate-preset" id="$preset.getPresetId()">$preset.getPresetLabel()</a></li>
 	            #end
 	          </ul>
           </div>
@@ -56,9 +56,17 @@
       $(function () {
     	  $('.dropdown-toggle').dropdown()
       })
-      $(".collapse").collapse({
-    	  toggle: false
-      })
+      $(".collapse").collapse('hide')
+      $(".activate-preset").click(function(event) {
+    	  event.preventDefault();
+    	  setToText = event.target.text;
+    	  setToItem = $(event.target).parent().parent().prev().prev();
+    	  $.post(event.target.href, { value: event.target.id})   
+    	    .success(function() {
+    	    	setToItem.html(setToText); 
+    	    });
+
+      });
     </script>
     
   </body>
