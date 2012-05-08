@@ -4,9 +4,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
     <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/mm/ui/js/jquery.popupWindow.js"></script>
     <script src="/mm/ui/js/bootstrap.js"></script>
-    <title>MMRest - Devices</title>
+    <title>MMAnywhere - Devices</title>
   </head>
 
   <body>
@@ -56,15 +55,12 @@
       $(function () {
         $('#devTab a:first').tab('show');
       })
-//       $(".dev-command").click(function () {
-//         event.preventDefault();
-//     	  $(this).popupWindow({
-//     		  height:500, 
-//     		  width:800, 
-//     		  top:50, 
-//     		  left:50 
-//         });
-// 	    });
+      $(".dev-command").click(function (event) {
+        event.preventDefault();
+        window.open(event.target.attributes.href.value, 
+        		"cmdWindow",
+        		"menubar=1,resizable=1,width=550,height=550");
+	    });
     </script>
 	  
 	  </div>  <!-- end #content -->

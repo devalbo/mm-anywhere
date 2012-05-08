@@ -5,7 +5,7 @@
     <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
     <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
     <script src="/mm/ui/js/bootstrap.js"></script>
-    <title>MMRest - Configurations</title>
+    <title>MMAnywhere - Configurations</title>
   </head>
 
   <body>
@@ -19,7 +19,7 @@
       #foreach( $cfg in $configurations )
       <div class="accordion-heading">
         <div class="row">
-          <div class="span2 offset1">
+          <div class="span2">
           <h3><a class="accordion-toggle" data-toggle="collapse" href="#collapse$foreach.count">
             $cfg.getConfigGroupLabel()
           </a></h3>

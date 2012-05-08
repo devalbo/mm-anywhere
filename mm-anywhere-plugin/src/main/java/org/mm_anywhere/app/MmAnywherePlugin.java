@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 
 import mmcorej.CMMCore;
 
-import org.apache.velocity.tools.view.VelocityViewServlet;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
@@ -75,7 +74,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 	}
 
 	public MmAnywherePlugin() {
-		setTitle("MM Rest");
+		setTitle("MM Anywhere");
 		final Preferences prefs = Preferences.userNodeForPackage(this.getClass());
 
 		_wwwResourcePath = prefs.get(MmAnywherePlugin.PREF_WWW_RESOURCE_PATH, "c:/Users/ajb/workspace-devalbo/mm-anywhere-plugin/www");
@@ -238,27 +237,6 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 			e.printStackTrace();
 		}
 
-//		try {
-//			HttpClient httpclient = new DefaultHttpClient();
-//			HttpGet httpget = new HttpGet("http://localhost:8080/v/vel/index.vm");
-//			HttpResponse response = httpclient.execute(httpget);
-//			HttpEntity entity = response.getEntity();
-//			System.out.println(EntityUtils.toString(entity));
-//
-//			httpclient = new DefaultHttpClient();
-//			httpget = new HttpGet("http://localhost:8080/dev/mmrest");
-//			response = httpclient.execute(httpget);
-//			entity = response.getEntity();
-//			System.out.println(EntityUtils.toString(entity));
-//
-//			httpclient = new DefaultHttpClient();
-//			httpget = new HttpGet("http://localhost:8080/readme.txt");
-//			response = httpclient.execute(httpget);
-//			entity = response.getEntity();
-//			System.out.println(EntityUtils.toString(entity));
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 	}
 
 	private void stopWebServer() {

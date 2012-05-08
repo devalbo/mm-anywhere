@@ -71,7 +71,7 @@ public class MmDevalboConverter {
   		MmDeviceCommand snapImageCommand = MmDeviceCommand.newBuilder().
   			setCommandId("snapImage").
   			setCommandLabel("Snap Image").
-  			setCommandUrl(MmAnywherePlugin.makePropertyUrl(deviceId, "snapImage")).
+  			setCommandUrl(MmAnywherePlugin.makeCommandUrl(deviceId, "snapImage")).
 				build();
   		mmDeviceCommands.add(snapImageCommand);
 
