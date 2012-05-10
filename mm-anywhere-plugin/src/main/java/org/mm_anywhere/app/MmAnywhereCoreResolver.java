@@ -5,8 +5,6 @@ import java.lang.reflect.Type;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.ext.Provider;
 
-import mmcorej.CMMCore;
-
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -16,21 +14,21 @@ import com.sun.jersey.spi.inject.Injectable;
 import com.sun.jersey.spi.inject.InjectableProvider;
 
 @Provider
-public class CMMCoreResolver implements InjectableProvider<Context, Type> {
-	public static String LOGGER_NAME = CMMCoreResolver.class.getName();
+public class MmAnywhereCoreResolver implements InjectableProvider<Context, Type> {
+	public static String LOGGER_NAME = MmAnywhereCoreResolver.class.getName();
 
-	private CMMCore mmCore;
+	private MmAnywhereCore mmCore;
 
-	public Injectable<CMMCore> getInjectable(ComponentContext arg0,
+	public Injectable<MmAnywhereCore> getInjectable(ComponentContext arg0,
 			Context arg1, Type c) {
-		if (c.equals(CMMCore.class)) {
-			return new Injectable<CMMCore>() {
-				public CMMCore getValue() {
+		if (c.equals(MmAnywhereCore.class)) {
+			return new Injectable<MmAnywhereCore>() {
+				public MmAnywhereCore getValue() {
 					BasicConfigurator.configure();
 					Logger log = Logger.getLogger(LOGGER_NAME);
 					if (mmCore == null) {
 						log.info("Getting MmCore");
-						mmCore = MmAnywherePlugin.getMmCore();
+						mmCore = MmAnywherePlugin.getMmAnywhereCore();
 					}
 					return mmCore;
 				}

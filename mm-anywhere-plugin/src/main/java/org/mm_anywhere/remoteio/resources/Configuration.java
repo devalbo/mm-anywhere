@@ -3,7 +3,6 @@
  */
 package org.mm_anywhere.remoteio.resources;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -15,6 +14,8 @@ import javax.ws.rs.core.Response;
 
 import mmcorej.CMMCore;
 
+import org.mm_anywhere.app.MmAnywhereCore;
+
 import com.sun.research.ws.wadl.Resource;
 
 /**
@@ -25,13 +26,13 @@ import com.sun.research.ws.wadl.Resource;
 public class Configuration extends Resource {
 
 	@Context
-	CMMCore _mmCore;
+	MmAnywhereCore _mmAnywhereCore;
 
 	@GET
 	@Produces("text/plain")
 	public String getConfigurationGroupPreset(@PathParam("cfgGroupId") String cfgGroupId) throws Exception {
 		try {
-			return _mmCore.getCurrentConfig(cfgGroupId);
+			return _mmAnywhereCore.getMMCore().getCurrentConfig(cfgGroupId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  
@@ -41,12 +42,14 @@ public class Configuration extends Resource {
 
 	@POST
 	@Produces("text/plain")
-	public javax.ws.rs.core.Response setConfigurationGroupPreset(
+	public Response setConfigurationGroupPreset(
 			@PathParam("cfgGroupId") String cfgGroupId,
 			@FormParam("value") String value) 
-	throws Exception {
-		_mmCore.setConfig(cfgGroupId, value);
-		_mmCore.waitForConfig(cfgGroupId, value);
+	throws Exception 
+	{
+		CMMCore core = _mmAnywhereCore.getMMCore();
+		core.setConfig(cfgGroupId, value);
+		core.waitForConfig(cfgGroupId, value);
 		return Response.ok(value).build();
 	}
 

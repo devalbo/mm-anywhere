@@ -9,6 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 
+import mmcorej.CMMCore;
+
 import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -85,6 +87,8 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
+			context.put("mmCore", MmAnywherePlugin.getMmCore());
+			context.put("mmAnywhereCore", MmAnywherePlugin.getMmAnywhereCore());
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "acquisition.vm");
 			sw = new StringWriter();
 			template.merge(context, sw);

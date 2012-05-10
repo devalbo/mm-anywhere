@@ -23,13 +23,13 @@
 						  <fieldset>
 						    <legend>Camera Control</legend>
                 <div class="control-group">
-	                <button class="btn btn-primary btn-large">Snap</button>
+	                <button class="btn btn-primary btn-large" id="btn-snap-image">Snap</button>
                   <button class="btn btn-large">Live</button>
                 </div>
 						    <div class="control-group">
 						      <label class="control-label" for="input01">Exposure [ms]</label>
 						      <div class="controls">
-						        <input type="text" class="input-mini" id="exposure-ms" value="10"></input>
+						        <input type="text" class="input-mini" id="exposure-ms" value="$mmCore.getExposure()"></input>
 						      </div>
 						    </div>
                 <div class="control-group">
@@ -46,15 +46,15 @@
                 <div class="control-group">
                   <label class="control-label" for="shutter">Shutter</label>
                   <div class="controls">
-                    <select id="shutter" class="input-medium">
-                      <option>DCam</option>
+                    <select id=shutter class="input-medium">
+                      <option>DShutter</option>
                     </select>
                   </div>
                 </div>
                 <div class="control-group">
                   <button class="btn btn-info">Open</button>
                   <label class="checkbox">
-                    <input type="checkbox"> Auto shutter
+                    <input type="checkbox" id="autoshutter"> Auto shutter
                   </label>
                 </div>
 						  </fieldset>
@@ -94,9 +94,9 @@
             </form>
 			    </div>
 			    
-			    <div class="span8">
+			    <div class="span8" id="acq-image-div">
 			      <!--Body content-->
-			      <img src="http://localhost:8080/images/1336445352370.jpg"></img>
+			      <img id="acq-image"></img>
 			    </div>
 			  </div>
 			</div>
@@ -138,20 +138,40 @@
     </div>  <!-- end #container -->
         
     <script>
-      $(function () {
-        $('.dropdown-toggle').dropdown()
-      })
-      $(".collapse").collapse('hide')
-      $(".activate-preset").click(function(event) {
+    $("#btn-snap-image").click(function (event) {
         event.preventDefault();
-        setToText = event.target.text;
-        setToItem = $(event.target).parent().parent().prev().prev();
-        $.post(event.target.href, { value: event.target.id})   
-          .success(function() {
-            setToItem.html(setToText); 
-          });
-
+        $('<img id="acq-image"/>')
+	        .attr('src', '$mmAnywhereCore.getMmAnywhereCoreUrl()/snapImage')
+	        .load(function(){
+	        	  $('#acq-image').remove();
+	            $('#acq-image-div').append( $(this) );
+	        });
       });
+    
+    $("#exposure-ms").keyup(function(e) {
+        if (e.which == 13) // Enter key
+            $(this).blur();
+    });
+    $('#exposure-ms').keypress(function(e) { return e.which != 13; });
+    $('#exposure-ms').blur(function() {
+      exposure = $(this).val();
+    	$.post('$mmAnywhereCore.getMmAnywhereCoreUrl()/exposure',
+    			{"exposure" : exposure},
+    			function(data) {
+    				  $('#exposure-ms').val(data);
+    		});
+    	});
+    
+    $('#binning').blur(function() {
+        $('#options').hide();
+      });
+    $('#shutter').blur(function() {
+        $('#options').hide();
+      });
+    $('#autoshutter').blur(function() {
+        $('#options').hide();
+      });
+    
     </script>
     
   </body>
