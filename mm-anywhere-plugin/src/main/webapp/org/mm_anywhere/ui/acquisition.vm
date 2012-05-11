@@ -5,6 +5,10 @@
     <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
     <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
     <script src="/mm/ui/js/bootstrap.js"></script>
+    <script>
+    var serverUrl = "$mmAnywhereCore.getMmAnywhereCoreUrl()";
+    </script>
+    <script src="/mm/ui/js/acquisition.js"></script>
     <title>MMAnywhere - Acquisition</title>
   </head>
 
@@ -24,7 +28,7 @@
 						    <legend>Camera Control</legend>
                 <div class="control-group">
 	                <button class="btn btn-primary btn-large" id="btn-snap-image">Snap</button>
-                  <button class="btn btn-large">Live</button>
+                  <button class="btn btn-large" id="btn-live-image" data-toggle="button">Live</button>
                 </div>
 						    <div class="control-group">
 						      <label class="control-label" for="input01">Exposure [ms]</label>
@@ -140,19 +144,24 @@
     <script>
     $("#btn-snap-image").click(function (event) {
         event.preventDefault();
-        $('<img id="acq-image"/>')
-	        .attr('src', '$mmAnywhereCore.getMmAnywhereCoreUrl()/snapImage')
-	        .load(function(){
-	        	  $('#acq-image').remove();
-	            $('#acq-image-div').append( $(this) );
-	        });
+        runningLive = false;
+        $("#btn-live-image").toggleClass("active", false);
+        getLatestImage();
       });
-    
-    $("#exposure-ms").keyup(function(e) {
-        if (e.which == 13) // Enter key
-            $(this).blur();
-    });
-    $('#exposure-ms').keypress(function(e) { return e.which != 13; });
+
+    $('#btn-live-image').button();
+    $("#btn-live-image").click(function (event) {
+    	  event.preventDefault();
+    	  theButton = event.target;
+        if ($(theButton).is(".active")) {
+        	runningLive = false;
+        } else {
+        	runningLive = true;
+        	getLatestImage();
+        }
+      });
+
+    registerEnterKey("#exposure-ms");
     $('#exposure-ms').blur(function() {
       exposure = $(this).val();
     	$.post('$mmAnywhereCore.getMmAnywhereCoreUrl()/exposure',
@@ -162,12 +171,17 @@
     		});
     	});
     
+    registerEnterKey("#binning");
     $('#binning').blur(function() {
         $('#options').hide();
       });
+    
+    registerEnterKey("#shutter");
     $('#shutter').blur(function() {
         $('#options').hide();
       });
+
+    registerEnterKey("#autoshutter");
     $('#autoshutter').blur(function() {
         $('#options').hide();
       });

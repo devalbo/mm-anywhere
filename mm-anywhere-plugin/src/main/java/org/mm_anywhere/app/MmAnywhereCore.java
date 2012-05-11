@@ -3,21 +3,19 @@
  */
 package org.mm_anywhere.app;
 
-import java.lang.reflect.InvocationTargetException;
-import java.net.URI;
-
 import ij.ImagePlus;
 import ij.io.FileSaver;
 import ij.process.ByteProcessor;
 import ij.process.ImageProcessor;
 import ij.process.ShortProcessor;
 
-import javax.swing.SwingUtilities;
-import javax.ws.rs.core.Response;
+import java.lang.reflect.InvocationTargetException;
 
-import org.mm_anywhere.remoteio.MmAnywhereApplication;
+import javax.swing.SwingUtilities;
 
 import mmcorej.CMMCore;
+
+import org.mm_anywhere.remoteio.MmAnywhereApplication;
 
 /**
  * @author ajb
@@ -80,12 +78,11 @@ public class MmAnywhereCore {
 						ImagePlus imp = new ImagePlus(fileName, ip);
 						FileSaver fs = new FileSaver(imp);
 						fs.saveAsJpeg(saveLocation);
-
+						
 						System.out.println("IMAGE SAVED");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-
 				}
 
 			});
