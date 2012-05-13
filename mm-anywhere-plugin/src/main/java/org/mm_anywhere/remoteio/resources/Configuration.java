@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 
 import mmcorej.CMMCore;
 
-import org.mm_anywhere.app.MmAnywhereCore;
+import org.mm_anywhere.app.MmAnywhereAppCore;
 
 import com.sun.research.ws.wadl.Resource;
 
@@ -26,7 +26,7 @@ import com.sun.research.ws.wadl.Resource;
 public class Configuration extends Resource {
 
 	@Context
-	MmAnywhereCore _mmAnywhereCore;
+	MmAnywhereAppCore _mmAnywhereCore;
 
 	@GET
 	@Produces("text/plain")

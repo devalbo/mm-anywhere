@@ -4834,12 +4834,17 @@ public final class MmAnywhere {
     boolean hasPresetLabel();
     String getPresetLabel();
     
-    // repeated string presetPropertyLabels = 3;
+    // repeated string presetPropertyDevices = 3;
+    java.util.List<String> getPresetPropertyDevicesList();
+    int getPresetPropertyDevicesCount();
+    String getPresetPropertyDevices(int index);
+    
+    // repeated string presetPropertyLabels = 4;
     java.util.List<String> getPresetPropertyLabelsList();
     int getPresetPropertyLabelsCount();
     String getPresetPropertyLabels(int index);
     
-    // repeated string presetPropertyValues = 4;
+    // repeated string presetPropertyValues = 5;
     java.util.List<String> getPresetPropertyValuesList();
     int getPresetPropertyValuesCount();
     String getPresetPropertyValues(int index);
@@ -4937,8 +4942,22 @@ public final class MmAnywhere {
       }
     }
     
-    // repeated string presetPropertyLabels = 3;
-    public static final int PRESETPROPERTYLABELS_FIELD_NUMBER = 3;
+    // repeated string presetPropertyDevices = 3;
+    public static final int PRESETPROPERTYDEVICES_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList presetPropertyDevices_;
+    public java.util.List<String>
+        getPresetPropertyDevicesList() {
+      return presetPropertyDevices_;
+    }
+    public int getPresetPropertyDevicesCount() {
+      return presetPropertyDevices_.size();
+    }
+    public String getPresetPropertyDevices(int index) {
+      return presetPropertyDevices_.get(index);
+    }
+    
+    // repeated string presetPropertyLabels = 4;
+    public static final int PRESETPROPERTYLABELS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList presetPropertyLabels_;
     public java.util.List<String>
         getPresetPropertyLabelsList() {
@@ -4951,8 +4970,8 @@ public final class MmAnywhere {
       return presetPropertyLabels_.get(index);
     }
     
-    // repeated string presetPropertyValues = 4;
-    public static final int PRESETPROPERTYVALUES_FIELD_NUMBER = 4;
+    // repeated string presetPropertyValues = 5;
+    public static final int PRESETPROPERTYVALUES_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList presetPropertyValues_;
     public java.util.List<String>
         getPresetPropertyValuesList() {
@@ -4968,6 +4987,7 @@ public final class MmAnywhere {
     private void initFields() {
       presetId_ = "";
       presetLabel_ = "";
+      presetPropertyDevices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -4997,11 +5017,14 @@ public final class MmAnywhere {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getPresetLabelBytes());
       }
+      for (int i = 0; i < presetPropertyDevices_.size(); i++) {
+        output.writeBytes(3, presetPropertyDevices_.getByteString(i));
+      }
       for (int i = 0; i < presetPropertyLabels_.size(); i++) {
-        output.writeBytes(3, presetPropertyLabels_.getByteString(i));
+        output.writeBytes(4, presetPropertyLabels_.getByteString(i));
       }
       for (int i = 0; i < presetPropertyValues_.size(); i++) {
-        output.writeBytes(4, presetPropertyValues_.getByteString(i));
+        output.writeBytes(5, presetPropertyValues_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -5019,6 +5042,15 @@ public final class MmAnywhere {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getPresetLabelBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < presetPropertyDevices_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(presetPropertyDevices_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getPresetPropertyDevicesList().size();
       }
       {
         int dataSize = 0;
@@ -5166,10 +5198,12 @@ public final class MmAnywhere {
         bitField0_ = (bitField0_ & ~0x00000001);
         presetLabel_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        presetPropertyDevices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
+        presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       
@@ -5217,15 +5251,21 @@ public final class MmAnywhere {
         }
         result.presetLabel_ = presetLabel_;
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          presetPropertyLabels_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              presetPropertyLabels_);
+          presetPropertyDevices_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              presetPropertyDevices_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.presetPropertyLabels_ = presetPropertyLabels_;
+        result.presetPropertyDevices_ = presetPropertyDevices_;
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          presetPropertyLabels_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              presetPropertyLabels_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.presetPropertyLabels_ = presetPropertyLabels_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           presetPropertyValues_ = new com.google.protobuf.UnmodifiableLazyStringList(
               presetPropertyValues_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.presetPropertyValues_ = presetPropertyValues_;
         result.bitField0_ = to_bitField0_;
@@ -5250,10 +5290,20 @@ public final class MmAnywhere {
         if (other.hasPresetLabel()) {
           setPresetLabel(other.getPresetLabel());
         }
+        if (!other.presetPropertyDevices_.isEmpty()) {
+          if (presetPropertyDevices_.isEmpty()) {
+            presetPropertyDevices_ = other.presetPropertyDevices_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePresetPropertyDevicesIsMutable();
+            presetPropertyDevices_.addAll(other.presetPropertyDevices_);
+          }
+          onChanged();
+        }
         if (!other.presetPropertyLabels_.isEmpty()) {
           if (presetPropertyLabels_.isEmpty()) {
             presetPropertyLabels_ = other.presetPropertyLabels_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePresetPropertyLabelsIsMutable();
             presetPropertyLabels_.addAll(other.presetPropertyLabels_);
@@ -5263,7 +5313,7 @@ public final class MmAnywhere {
         if (!other.presetPropertyValues_.isEmpty()) {
           if (presetPropertyValues_.isEmpty()) {
             presetPropertyValues_ = other.presetPropertyValues_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePresetPropertyValuesIsMutable();
             presetPropertyValues_.addAll(other.presetPropertyValues_);
@@ -5320,11 +5370,16 @@ public final class MmAnywhere {
               break;
             }
             case 26: {
+              ensurePresetPropertyDevicesIsMutable();
+              presetPropertyDevices_.add(input.readBytes());
+              break;
+            }
+            case 34: {
               ensurePresetPropertyLabelsIsMutable();
               presetPropertyLabels_.add(input.readBytes());
               break;
             }
-            case 34: {
+            case 42: {
               ensurePresetPropertyValuesIsMutable();
               presetPropertyValues_.add(input.readBytes());
               break;
@@ -5407,12 +5462,68 @@ public final class MmAnywhere {
         onChanged();
       }
       
-      // repeated string presetPropertyLabels = 3;
+      // repeated string presetPropertyDevices = 3;
+      private com.google.protobuf.LazyStringList presetPropertyDevices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePresetPropertyDevicesIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          presetPropertyDevices_ = new com.google.protobuf.LazyStringArrayList(presetPropertyDevices_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      public java.util.List<String>
+          getPresetPropertyDevicesList() {
+        return java.util.Collections.unmodifiableList(presetPropertyDevices_);
+      }
+      public int getPresetPropertyDevicesCount() {
+        return presetPropertyDevices_.size();
+      }
+      public String getPresetPropertyDevices(int index) {
+        return presetPropertyDevices_.get(index);
+      }
+      public Builder setPresetPropertyDevices(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyDevicesIsMutable();
+        presetPropertyDevices_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addPresetPropertyDevices(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePresetPropertyDevicesIsMutable();
+        presetPropertyDevices_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllPresetPropertyDevices(
+          java.lang.Iterable<String> values) {
+        ensurePresetPropertyDevicesIsMutable();
+        super.addAll(values, presetPropertyDevices_);
+        onChanged();
+        return this;
+      }
+      public Builder clearPresetPropertyDevices() {
+        presetPropertyDevices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      void addPresetPropertyDevices(com.google.protobuf.ByteString value) {
+        ensurePresetPropertyDevicesIsMutable();
+        presetPropertyDevices_.add(value);
+        onChanged();
+      }
+      
+      // repeated string presetPropertyLabels = 4;
       private com.google.protobuf.LazyStringList presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePresetPropertyLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           presetPropertyLabels_ = new com.google.protobuf.LazyStringArrayList(presetPropertyLabels_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
       public java.util.List<String>
@@ -5453,7 +5564,7 @@ public final class MmAnywhere {
       }
       public Builder clearPresetPropertyLabels() {
         presetPropertyLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -5463,12 +5574,12 @@ public final class MmAnywhere {
         onChanged();
       }
       
-      // repeated string presetPropertyValues = 4;
+      // repeated string presetPropertyValues = 5;
       private com.google.protobuf.LazyStringList presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePresetPropertyValuesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           presetPropertyValues_ = new com.google.protobuf.LazyStringArrayList(presetPropertyValues_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
       public java.util.List<String>
@@ -5509,7 +5620,7 @@ public final class MmAnywhere {
       }
       public Builder clearPresetPropertyValues() {
         presetPropertyValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -5595,12 +5706,13 @@ public final class MmAnywhere {
       "l\030\002 \002(\t\022I\n\022configGroupPresets\030\003 \003(\0132-.or" +
       "g.ratatosk.mmrest.data.MmConfigGroupPres",
       "et\022\025\n\rcurrentPreset\030\004 \002(\t\022\026\n\016configGroup" +
-      "Url\030\005 \002(\t\"x\n\023MmConfigGroupPreset\022\020\n\010pres" +
-      "etId\030\001 \002(\t\022\023\n\013presetLabel\030\002 \002(\t\022\034\n\024prese" +
-      "tPropertyLabels\030\003 \003(\t\022\034\n\024presetPropertyV" +
-      "alues\030\004 \003(\t*Q\n\017MmPropertyTypes\022\r\n\tUNDEFI" +
-      "NED\020\000\022\013\n\007BOOLEAN\020\001\022\013\n\007INTEGER\020\002\022\t\n\005FLOAT" +
-      "\020\003\022\n\n\006STRING\020\004"
+      "Url\030\005 \002(\t\"\227\001\n\023MmConfigGroupPreset\022\020\n\010pre" +
+      "setId\030\001 \002(\t\022\023\n\013presetLabel\030\002 \002(\t\022\035\n\025pres" +
+      "etPropertyDevices\030\003 \003(\t\022\034\n\024presetPropert" +
+      "yLabels\030\004 \003(\t\022\034\n\024presetPropertyValues\030\005 " +
+      "\003(\t*Q\n\017MmPropertyTypes\022\r\n\tUNDEFINED\020\000\022\013\n" +
+      "\007BOOLEAN\020\001\022\013\n\007INTEGER\020\002\022\t\n\005FLOAT\020\003\022\n\n\006ST" +
+      "RING\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -5660,7 +5772,7 @@ public final class MmAnywhere {
           internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_ratatosk_mmrest_data_MmConfigGroupPreset_descriptor,
-              new java.lang.String[] { "PresetId", "PresetLabel", "PresetPropertyLabels", "PresetPropertyValues", },
+              new java.lang.String[] { "PresetId", "PresetLabel", "PresetPropertyDevices", "PresetPropertyLabels", "PresetPropertyValues", },
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.class,
               org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset.Builder.class);
           return null;

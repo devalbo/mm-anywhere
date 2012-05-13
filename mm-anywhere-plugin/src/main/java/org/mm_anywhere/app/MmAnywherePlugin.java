@@ -52,7 +52,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 	public final static String CMD_STOP_SERVER = "Stop server";
 
 	private static CMMCore _mmCore;
-	private static MmAnywhereCore _mmAnywhereCore;
+	private static MmAnywhereAppCore _mmAnywhereCore;
 
 	private static MmAnywherePlugin _mmRestPlugin;
 
@@ -74,7 +74,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 		return _mmCore;
 	}
 	
-	public static MmAnywhereCore getMmAnywhereCore() {
+	public static MmAnywhereAppCore getMmAnywhereAppCore() {
 		return _mmAnywhereCore;
 	}
 
@@ -168,7 +168,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 	@Override
 	public void setApp(ScriptInterface app) {
 		_mmCore = app.getMMCore();
-		_mmAnywhereCore = new MmAnywhereCore(_mmCore);
+		_mmAnywhereCore = new MmAnywhereAppCore(_mmCore);
 		_mmRestPlugin = this;
 
 		if (_autoStartServer) {

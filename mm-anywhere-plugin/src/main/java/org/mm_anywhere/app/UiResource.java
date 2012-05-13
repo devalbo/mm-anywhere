@@ -87,8 +87,9 @@ public class UiResource {
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
-			context.put("mmCore", MmAnywherePlugin.getMmCore());
-			context.put("mmAnywhereCore", MmAnywherePlugin.getMmAnywhereCore());
+//			context.put("mmCore", MmAnywherePlugin.getMmCore());
+			context.put("configurations", MmDevalboConverter.getAllMmConfigurations().getMmConfigGroupsList());
+			context.put("mmAnywhereAppCore", MmAnywherePlugin.getMmAnywhereAppCore());
 			Template template = velocity.getTemplate(TEMPLATE_PATH + "acquisition.vm");
 			sw = new StringWriter();
 			template.merge(context, sw);
@@ -110,6 +111,13 @@ public class UiResource {
 	@Produces("application/javascript")
 	public InputStream getJsResource(@PathParam("jsresource") String jsResource) {
 		return getClass().getResourceAsStream(TEMPLATE_PATH + "js/" + jsResource);
+	}
+	
+	@GET
+	@Path("/img/{imgresource}")
+	@Produces("application/javascript")
+	public InputStream getImgResource(@PathParam("imgresource") String imgResource) {
+		return getClass().getResourceAsStream(TEMPLATE_PATH + "img/" + imgResource);
 	}
 	
 }

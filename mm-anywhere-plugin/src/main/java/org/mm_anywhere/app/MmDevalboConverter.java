@@ -106,16 +106,19 @@ public class MmDevalboConverter {
       	List<MmConfigGroupPreset> mmConfigGroupPresets = new ArrayList<MmConfigGroupPreset>();
       	for(String config : MmCoreUtils.getStrVectorIterator(MmAnywherePlugin.getMmCore().getAvailableConfigs(cfgGroup))) {
 	      		Configuration cfgData = MmAnywherePlugin.getMmCore().getConfigData(cfgGroup, config);
+	      		List<String> configPropertyDevices= new ArrayList<String>();
 	      		List<String> configPropertyLabels = new ArrayList<String>();
 	      		List<String> configPropertyValues = new ArrayList<String>();
 	      		for (int i = 0; i < cfgData.size(); i++) {
 	      			PropertySetting setting = cfgData.getSetting(i);
+	      			configPropertyDevices.add(setting.getDeviceLabel());
 	      			configPropertyLabels.add(setting.getPropertyName());
 	      			configPropertyValues.add(setting.getPropertyValue());
 	      		}
 	      		MmConfigGroupPreset mmConfigGroupPreset = MmConfigGroupPreset.newBuilder().
 	      			setPresetId(config).
 	      			setPresetLabel(config).
+	      			addAllPresetPropertyDevices(configPropertyDevices).
 	      			addAllPresetPropertyLabels(configPropertyLabels).
 	      			addAllPresetPropertyValues(configPropertyValues).
 	      			build();

@@ -16,7 +16,10 @@
  */
 
 package org.mm_anywhere.app;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 import mmcorej.CMMCore;
 import mmcorej.StrVector;
@@ -63,6 +66,14 @@ public class MmCoreUtils {
 				};
 			};
 		};
+	}
+	
+	public static List<String> getStrVectorList(final StrVector strVector) {
+		List<String> l = new ArrayList<String>();
+		for (String str : getStrVectorIterator(strVector)) {
+			l.add(str);
+		}
+		return l;
 	}
 	
 }

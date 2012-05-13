@@ -38,11 +38,17 @@
 	     <div id="collapse$foreach.count" class="accordion-body collapse" style="height: auto; ">
 	       <div class="accordion-inner">
            #foreach( $preset in $cfg.getConfigGroupPresetsList() )
-             <ul>
-              #foreach( $propLabel in $preset.getPresetPropertyLabelsList() )
-                <li>$preset.getPresetLabel():$propLabel:$preset.getPresetPropertyValues($foreach.index)</li>              
-              #end
-             </ul>
+           <table class="table table-striped table-bordered">
+             <thead><tr><th><h4>$preset.getPresetLabel()</h4></th><th>Device</th><th>Property</th><th>Current Value</th></tr></thead>
+             #foreach( $propLabel in $preset.getPresetPropertyLabelsList() )
+              <tr>
+              <td>$foreach.count</td>
+              <td>$preset.getPresetPropertyDevices($foreach.index)</td>
+              <td>$preset.getPresetPropertyLabels($foreach.index)</td>
+              <td>$preset.getPresetPropertyValues($foreach.index)</td>
+              </tr>              
+            #end
+           </table>
            #end
 	       </div>
 	     </div>
@@ -60,13 +66,14 @@
       $(".activate-preset").click(function(event) {
     	  event.preventDefault();
     	  setToText = event.target.text;
-    	  setToItem = $(event.target).parent().parent().prev().prev();
+    	  cfgButton = $(event.target).parent().parent().prev().prev();
     	  $.post(event.target.href, { value: event.target.id})   
     	    .success(function() {
-    	    	setToItem.html(setToText); 
+    	    	cfgButton.html(setToText); 
     	    });
 
       });
+      
     </script>
     
   </body>

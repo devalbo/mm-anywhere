@@ -17,18 +17,18 @@ import com.sun.jersey.spi.inject.InjectableProvider;
 public class MmAnywhereCoreResolver implements InjectableProvider<Context, Type> {
 	public static String LOGGER_NAME = MmAnywhereCoreResolver.class.getName();
 
-	private MmAnywhereCore mmCore;
+	private MmAnywhereAppCore mmCore;
 
-	public Injectable<MmAnywhereCore> getInjectable(ComponentContext arg0,
+	public Injectable<MmAnywhereAppCore> getInjectable(ComponentContext arg0,
 			Context arg1, Type c) {
-		if (c.equals(MmAnywhereCore.class)) {
-			return new Injectable<MmAnywhereCore>() {
-				public MmAnywhereCore getValue() {
+		if (c.equals(MmAnywhereAppCore.class)) {
+			return new Injectable<MmAnywhereAppCore>() {
+				public MmAnywhereAppCore getValue() {
 					BasicConfigurator.configure();
 					Logger log = Logger.getLogger(LOGGER_NAME);
 					if (mmCore == null) {
 						log.info("Getting MmCore");
-						mmCore = MmAnywherePlugin.getMmAnywhereCore();
+						mmCore = MmAnywherePlugin.getMmAnywhereAppCore();
 					}
 					return mmCore;
 				}

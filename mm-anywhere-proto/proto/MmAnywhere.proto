@@ -51,6 +51,7 @@ message MmConfigGroup {
 message MmConfigGroupPreset {
   required string presetId = 1;
   required string presetLabel = 2;
-  repeated string presetPropertyLabels = 3;
-  repeated string presetPropertyValues = 4;
+  repeated string presetPropertyDevices = 3;
+  repeated string presetPropertyLabels = 4;
+  repeated string presetPropertyValues = 5;
 }

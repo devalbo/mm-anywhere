@@ -15,7 +15,7 @@ import javax.ws.rs.core.UriInfo;
 
 import mmcorej.DeviceType;
 
-import org.mm_anywhere.app.MmAnywhereCore;
+import org.mm_anywhere.app.MmAnywhereAppCore;
 import org.mm_anywhere.remoteio.ValidationUtilities;
 
 /**
@@ -29,7 +29,7 @@ public class CmdSnapImage {
 	UriInfo _uri;
 	
 	@Context
-	MmAnywhereCore _mmAnywhereCore;
+	MmAnywhereAppCore _mmAnywhereCore;
 
 	@GET
 	@Produces("text/plain")

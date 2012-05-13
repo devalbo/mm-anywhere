@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='MmAnywhere.proto',
   package='org.ratatosk.mmrest.data',
-  serialized_pb='\n\x10MmAnywhere.proto\x12\x18org.ratatosk.mmrest.data\"W\n\x10MmDevicesListing\x12\x43\n\x10mmDeviceListings\x18\x01 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceListing\"\xe8\x01\n\x0fMmDeviceListing\x12\x10\n\x08\x64\x65viceId\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65viceLabel\x18\x02 \x02(\t\x12\x12\n\ndeviceType\x18\x03 \x02(\t\x12\x11\n\tdeviceUrl\x18\x04 \x02(\t\x12\x44\n\x10\x64\x65viceProperties\x18\x05 \x03(\x0b\x32*.org.ratatosk.mmrest.data.MmDeviceProperty\x12\x41\n\x0e\x64\x65viceCommands\x18\x06 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceCommand\"\x7f\n\x10MmDeviceProperty\x12\x12\n\npropertyId\x18\x01 \x02(\t\x12\x15\n\rpropertyValue\x18\x02 \x02(\t\x12\x15\n\rpropertyLabel\x18\x03 \x02(\t\x12\x14\n\x0cpropertyType\x18\x04 \x02(\t\x12\x13\n\x0bpropertyUrl\x18\x05 \x02(\t\"N\n\x0fMmDeviceCommand\x12\x11\n\tcommandId\x18\x01 \x02(\t\x12\x14\n\x0c\x63ommandLabel\x18\x02 \x02(\t\x12\x12\n\ncommandUrl\x18\x03 \x02(\t\"Q\n\x0eMmConfigGroups\x12?\n\x0emmConfigGroups\x18\x01 \x03(\x0b\x32\'.org.ratatosk.mmrest.data.MmConfigGroup\"\xba\x01\n\rMmConfigGroup\x12\x15\n\rconfigGroupId\x18\x01 \x02(\t\x12\x18\n\x10\x63onfigGroupLabel\x18\x02 \x02(\t\x12I\n\x12\x63onfigGroupPresets\x18\x03 \x03(\x0b\x32-.org.ratatosk.mmrest.data.MmConfigGroupPreset\x12\x15\n\rcurrentPreset\x18\x04 \x02(\t\x12\x16\n\x0e\x63onfigGroupUrl\x18\x05 \x02(\t\"x\n\x13MmConfigGroupPreset\x12\x10\n\x08presetId\x18\x01 \x02(\t\x12\x13\n\x0bpresetLabel\x18\x02 \x02(\t\x12\x1c\n\x14presetPropertyLabels\x18\x03 \x03(\t\x12\x1c\n\x14presetPropertyValues\x18\x04 \x03(\t*Q\n\x0fMmPropertyTypes\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07\x42OOLEAN\x10\x01\x12\x0b\n\x07INTEGER\x10\x02\x12\t\n\x05\x46LOAT\x10\x03\x12\n\n\x06STRING\x10\x04')
+  serialized_pb='\n\x10MmAnywhere.proto\x12\x18org.ratatosk.mmrest.data\"W\n\x10MmDevicesListing\x12\x43\n\x10mmDeviceListings\x18\x01 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceListing\"\xe8\x01\n\x0fMmDeviceListing\x12\x10\n\x08\x64\x65viceId\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65viceLabel\x18\x02 \x02(\t\x12\x12\n\ndeviceType\x18\x03 \x02(\t\x12\x11\n\tdeviceUrl\x18\x04 \x02(\t\x12\x44\n\x10\x64\x65viceProperties\x18\x05 \x03(\x0b\x32*.org.ratatosk.mmrest.data.MmDeviceProperty\x12\x41\n\x0e\x64\x65viceCommands\x18\x06 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceCommand\"\x7f\n\x10MmDeviceProperty\x12\x12\n\npropertyId\x18\x01 \x02(\t\x12\x15\n\rpropertyValue\x18\x02 \x02(\t\x12\x15\n\rpropertyLabel\x18\x03 \x02(\t\x12\x14\n\x0cpropertyType\x18\x04 \x02(\t\x12\x13\n\x0bpropertyUrl\x18\x05 \x02(\t\"N\n\x0fMmDeviceCommand\x12\x11\n\tcommandId\x18\x01 \x02(\t\x12\x14\n\x0c\x63ommandLabel\x18\x02 \x02(\t\x12\x12\n\ncommandUrl\x18\x03 \x02(\t\"Q\n\x0eMmConfigGroups\x12?\n\x0emmConfigGroups\x18\x01 \x03(\x0b\x32\'.org.ratatosk.mmrest.data.MmConfigGroup\"\xba\x01\n\rMmConfigGroup\x12\x15\n\rconfigGroupId\x18\x01 \x02(\t\x12\x18\n\x10\x63onfigGroupLabel\x18\x02 \x02(\t\x12I\n\x12\x63onfigGroupPresets\x18\x03 \x03(\x0b\x32-.org.ratatosk.mmrest.data.MmConfigGroupPreset\x12\x15\n\rcurrentPreset\x18\x04 \x02(\t\x12\x16\n\x0e\x63onfigGroupUrl\x18\x05 \x02(\t\"\x97\x01\n\x13MmConfigGroupPreset\x12\x10\n\x08presetId\x18\x01 \x02(\t\x12\x13\n\x0bpresetLabel\x18\x02 \x02(\t\x12\x1d\n\x15presetPropertyDevices\x18\x03 \x03(\t\x12\x1c\n\x14presetPropertyLabels\x18\x04 \x03(\t\x12\x1c\n\x14presetPropertyValues\x18\x05 \x03(\t*Q\n\x0fMmPropertyTypes\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07\x42OOLEAN\x10\x01\x12\x0b\n\x07INTEGER\x10\x02\x12\t\n\x05\x46LOAT\x10\x03\x12\n\n\x06STRING\x10\x04')
 
 _MMPROPERTYTYPES = descriptor.EnumDescriptor(
   name='MmPropertyTypes',
@@ -42,8 +42,8 @@ _MMPROPERTYTYPES = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=973,
-  serialized_end=1054,
+  serialized_start=1005,
+  serialized_end=1086,
 )
 
 
@@ -350,15 +350,22 @@ _MMCONFIGGROUPPRESET = descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetPropertyLabels', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyLabels', index=2,
+      name='presetPropertyDevices', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyDevices', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetPropertyValues', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyValues', index=3,
+      name='presetPropertyLabels', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyLabels', index=3,
       number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='presetPropertyValues', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyValues', index=4,
+      number=5, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -372,8 +379,8 @@ _MMCONFIGGROUPPRESET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=851,
-  serialized_end=971,
+  serialized_start=852,
+  serialized_end=1003,
 )
 
 _MMDEVICESLISTING.fields_by_name['mmDeviceListings'].message_type = _MMDEVICELISTING
