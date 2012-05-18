@@ -13,10 +13,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 
-import com.google.protobuf.HtmlFormat;
-import com.google.protobuf.JsonFormat;
 import com.google.protobuf.Message;
-import com.google.protobuf.XmlFormat;
+//import com.googlecode.protobuf.format.HtmlFormat;
+//import com.googlecode.protobuf.format.JsonFormat;
+//import com.googlecode.protobuf.format.XmlFormat;
 
 /**
  *
@@ -37,11 +37,11 @@ public class ProtobufWriter implements MessageBodyWriter<Message> {
     }
   
     if (MediaType.APPLICATION_JSON_TYPE.isCompatible(mediaType)) {
-      _asString = JsonFormat.printToString(t);
+//      _asString = JsonFormat.printToString(t);
     } else if (MediaType.APPLICATION_XML_TYPE.isCompatible(mediaType)) {
-      _asString = XmlFormat.printToString(t);
+//      _asString = XmlFormat.printToString(t);
     } else if (MediaType.TEXT_HTML_TYPE.isCompatible(mediaType)) {
-      _asString = HtmlFormat.printToString(t);
+//      _asString = HtmlFormat.printToString(t);
     } else if (MediaType.TEXT_PLAIN_TYPE.isCompatible(mediaType)) {
       _asString = t.toString();
     } else { //unsupported type

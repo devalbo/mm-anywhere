@@ -12,13 +12,13 @@ import mmcorej.PropertySetting;
 import mmcorej.PropertyType;
 import mmcorej.StrVector;
 
-import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroup;
-import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroupPreset;
-import org.ratatosk.mmrest.data.MmAnywhere.MmConfigGroups;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceCommand;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDevicesListing;
+import org.mm_anywhere.data.MmAnywhere.MmConfigGroup;
+import org.mm_anywhere.data.MmAnywhere.MmConfigGroupPreset;
+import org.mm_anywhere.data.MmAnywhere.MmConfigGroups;
+import org.mm_anywhere.data.MmAnywhere.MmDeviceCommand;
+import org.mm_anywhere.data.MmAnywhere.MmDeviceListing;
+import org.mm_anywhere.data.MmAnywhere.MmDeviceProperty;
+import org.mm_anywhere.data.MmAnywhere.MmDevicesListing;
 
 /**
  * @author ajb

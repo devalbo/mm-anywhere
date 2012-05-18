@@ -10,12 +10,12 @@ from google.protobuf import descriptor_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='MmAnywhere.proto',
-  package='org.ratatosk.mmrest.data',
-  serialized_pb='\n\x10MmAnywhere.proto\x12\x18org.ratatosk.mmrest.data\"W\n\x10MmDevicesListing\x12\x43\n\x10mmDeviceListings\x18\x01 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceListing\"\xe8\x01\n\x0fMmDeviceListing\x12\x10\n\x08\x64\x65viceId\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65viceLabel\x18\x02 \x02(\t\x12\x12\n\ndeviceType\x18\x03 \x02(\t\x12\x11\n\tdeviceUrl\x18\x04 \x02(\t\x12\x44\n\x10\x64\x65viceProperties\x18\x05 \x03(\x0b\x32*.org.ratatosk.mmrest.data.MmDeviceProperty\x12\x41\n\x0e\x64\x65viceCommands\x18\x06 \x03(\x0b\x32).org.ratatosk.mmrest.data.MmDeviceCommand\"\x7f\n\x10MmDeviceProperty\x12\x12\n\npropertyId\x18\x01 \x02(\t\x12\x15\n\rpropertyValue\x18\x02 \x02(\t\x12\x15\n\rpropertyLabel\x18\x03 \x02(\t\x12\x14\n\x0cpropertyType\x18\x04 \x02(\t\x12\x13\n\x0bpropertyUrl\x18\x05 \x02(\t\"N\n\x0fMmDeviceCommand\x12\x11\n\tcommandId\x18\x01 \x02(\t\x12\x14\n\x0c\x63ommandLabel\x18\x02 \x02(\t\x12\x12\n\ncommandUrl\x18\x03 \x02(\t\"Q\n\x0eMmConfigGroups\x12?\n\x0emmConfigGroups\x18\x01 \x03(\x0b\x32\'.org.ratatosk.mmrest.data.MmConfigGroup\"\xba\x01\n\rMmConfigGroup\x12\x15\n\rconfigGroupId\x18\x01 \x02(\t\x12\x18\n\x10\x63onfigGroupLabel\x18\x02 \x02(\t\x12I\n\x12\x63onfigGroupPresets\x18\x03 \x03(\x0b\x32-.org.ratatosk.mmrest.data.MmConfigGroupPreset\x12\x15\n\rcurrentPreset\x18\x04 \x02(\t\x12\x16\n\x0e\x63onfigGroupUrl\x18\x05 \x02(\t\"\x97\x01\n\x13MmConfigGroupPreset\x12\x10\n\x08presetId\x18\x01 \x02(\t\x12\x13\n\x0bpresetLabel\x18\x02 \x02(\t\x12\x1d\n\x15presetPropertyDevices\x18\x03 \x03(\t\x12\x1c\n\x14presetPropertyLabels\x18\x04 \x03(\t\x12\x1c\n\x14presetPropertyValues\x18\x05 \x03(\t*Q\n\x0fMmPropertyTypes\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07\x42OOLEAN\x10\x01\x12\x0b\n\x07INTEGER\x10\x02\x12\t\n\x05\x46LOAT\x10\x03\x12\n\n\x06STRING\x10\x04')
+  package='org.mm_anywhere.data',
+  serialized_pb='\n\x10MmAnywhere.proto\x12\x14org.mm_anywhere.data\"S\n\x10MmDevicesListing\x12?\n\x10mmDeviceListings\x18\x01 \x03(\x0b\x32%.org.mm_anywhere.data.MmDeviceListing\"\xe0\x01\n\x0fMmDeviceListing\x12\x10\n\x08\x64\x65viceId\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65viceLabel\x18\x02 \x02(\t\x12\x12\n\ndeviceType\x18\x03 \x02(\t\x12\x11\n\tdeviceUrl\x18\x04 \x02(\t\x12@\n\x10\x64\x65viceProperties\x18\x05 \x03(\x0b\x32&.org.mm_anywhere.data.MmDeviceProperty\x12=\n\x0e\x64\x65viceCommands\x18\x06 \x03(\x0b\x32%.org.mm_anywhere.data.MmDeviceCommand\"\x7f\n\x10MmDeviceProperty\x12\x12\n\npropertyId\x18\x01 \x02(\t\x12\x15\n\rpropertyValue\x18\x02 \x02(\t\x12\x15\n\rpropertyLabel\x18\x03 \x02(\t\x12\x14\n\x0cpropertyType\x18\x04 \x02(\t\x12\x13\n\x0bpropertyUrl\x18\x05 \x02(\t\"N\n\x0fMmDeviceCommand\x12\x11\n\tcommandId\x18\x01 \x02(\t\x12\x14\n\x0c\x63ommandLabel\x18\x02 \x02(\t\x12\x12\n\ncommandUrl\x18\x03 \x02(\t\"M\n\x0eMmConfigGroups\x12;\n\x0emmConfigGroups\x18\x01 \x03(\x0b\x32#.org.mm_anywhere.data.MmConfigGroup\"\xb6\x01\n\rMmConfigGroup\x12\x15\n\rconfigGroupId\x18\x01 \x02(\t\x12\x18\n\x10\x63onfigGroupLabel\x18\x02 \x02(\t\x12\x45\n\x12\x63onfigGroupPresets\x18\x03 \x03(\x0b\x32).org.mm_anywhere.data.MmConfigGroupPreset\x12\x15\n\rcurrentPreset\x18\x04 \x02(\t\x12\x16\n\x0e\x63onfigGroupUrl\x18\x05 \x02(\t\"\x97\x01\n\x13MmConfigGroupPreset\x12\x10\n\x08presetId\x18\x01 \x02(\t\x12\x13\n\x0bpresetLabel\x18\x02 \x02(\t\x12\x1d\n\x15presetPropertyDevices\x18\x03 \x03(\t\x12\x1c\n\x14presetPropertyLabels\x18\x04 \x03(\t\x12\x1c\n\x14presetPropertyValues\x18\x05 \x03(\t*Q\n\x0fMmPropertyTypes\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07\x42OOLEAN\x10\x01\x12\x0b\n\x07INTEGER\x10\x02\x12\t\n\x05\x46LOAT\x10\x03\x12\n\n\x06STRING\x10\x04\x42\x02H\x02')
 
 _MMPROPERTYTYPES = descriptor.EnumDescriptor(
   name='MmPropertyTypes',
-  full_name='org.ratatosk.mmrest.data.MmPropertyTypes',
+  full_name='org.mm_anywhere.data.MmPropertyTypes',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -42,8 +42,8 @@ _MMPROPERTYTYPES = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1005,
-  serialized_end=1086,
+  serialized_start=981,
+  serialized_end=1062,
 )
 
 
@@ -57,13 +57,13 @@ STRING = 4
 
 _MMDEVICESLISTING = descriptor.Descriptor(
   name='MmDevicesListing',
-  full_name='org.ratatosk.mmrest.data.MmDevicesListing',
+  full_name='org.mm_anywhere.data.MmDevicesListing',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='mmDeviceListings', full_name='org.ratatosk.mmrest.data.MmDevicesListing.mmDeviceListings', index=0,
+      name='mmDeviceListings', full_name='org.mm_anywhere.data.MmDevicesListing.mmDeviceListings', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -78,55 +78,55 @@ _MMDEVICESLISTING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=46,
-  serialized_end=133,
+  serialized_start=42,
+  serialized_end=125,
 )
 
 
 _MMDEVICELISTING = descriptor.Descriptor(
   name='MmDeviceListing',
-  full_name='org.ratatosk.mmrest.data.MmDeviceListing',
+  full_name='org.mm_anywhere.data.MmDeviceListing',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='deviceId', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceId', index=0,
+      name='deviceId', full_name='org.mm_anywhere.data.MmDeviceListing.deviceId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='deviceLabel', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceLabel', index=1,
+      name='deviceLabel', full_name='org.mm_anywhere.data.MmDeviceListing.deviceLabel', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='deviceType', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceType', index=2,
+      name='deviceType', full_name='org.mm_anywhere.data.MmDeviceListing.deviceType', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='deviceUrl', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceUrl', index=3,
+      name='deviceUrl', full_name='org.mm_anywhere.data.MmDeviceListing.deviceUrl', index=3,
       number=4, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='deviceProperties', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceProperties', index=4,
+      name='deviceProperties', full_name='org.mm_anywhere.data.MmDeviceListing.deviceProperties', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='deviceCommands', full_name='org.ratatosk.mmrest.data.MmDeviceListing.deviceCommands', index=5,
+      name='deviceCommands', full_name='org.mm_anywhere.data.MmDeviceListing.deviceCommands', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -141,48 +141,48 @@ _MMDEVICELISTING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=136,
-  serialized_end=368,
+  serialized_start=128,
+  serialized_end=352,
 )
 
 
 _MMDEVICEPROPERTY = descriptor.Descriptor(
   name='MmDeviceProperty',
-  full_name='org.ratatosk.mmrest.data.MmDeviceProperty',
+  full_name='org.mm_anywhere.data.MmDeviceProperty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='propertyId', full_name='org.ratatosk.mmrest.data.MmDeviceProperty.propertyId', index=0,
+      name='propertyId', full_name='org.mm_anywhere.data.MmDeviceProperty.propertyId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='propertyValue', full_name='org.ratatosk.mmrest.data.MmDeviceProperty.propertyValue', index=1,
+      name='propertyValue', full_name='org.mm_anywhere.data.MmDeviceProperty.propertyValue', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='propertyLabel', full_name='org.ratatosk.mmrest.data.MmDeviceProperty.propertyLabel', index=2,
+      name='propertyLabel', full_name='org.mm_anywhere.data.MmDeviceProperty.propertyLabel', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='propertyType', full_name='org.ratatosk.mmrest.data.MmDeviceProperty.propertyType', index=3,
+      name='propertyType', full_name='org.mm_anywhere.data.MmDeviceProperty.propertyType', index=3,
       number=4, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='propertyUrl', full_name='org.ratatosk.mmrest.data.MmDeviceProperty.propertyUrl', index=4,
+      name='propertyUrl', full_name='org.mm_anywhere.data.MmDeviceProperty.propertyUrl', index=4,
       number=5, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -197,34 +197,34 @@ _MMDEVICEPROPERTY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=370,
-  serialized_end=497,
+  serialized_start=354,
+  serialized_end=481,
 )
 
 
 _MMDEVICECOMMAND = descriptor.Descriptor(
   name='MmDeviceCommand',
-  full_name='org.ratatosk.mmrest.data.MmDeviceCommand',
+  full_name='org.mm_anywhere.data.MmDeviceCommand',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='commandId', full_name='org.ratatosk.mmrest.data.MmDeviceCommand.commandId', index=0,
+      name='commandId', full_name='org.mm_anywhere.data.MmDeviceCommand.commandId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='commandLabel', full_name='org.ratatosk.mmrest.data.MmDeviceCommand.commandLabel', index=1,
+      name='commandLabel', full_name='org.mm_anywhere.data.MmDeviceCommand.commandLabel', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='commandUrl', full_name='org.ratatosk.mmrest.data.MmDeviceCommand.commandUrl', index=2,
+      name='commandUrl', full_name='org.mm_anywhere.data.MmDeviceCommand.commandUrl', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -239,20 +239,20 @@ _MMDEVICECOMMAND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=499,
-  serialized_end=577,
+  serialized_start=483,
+  serialized_end=561,
 )
 
 
 _MMCONFIGGROUPS = descriptor.Descriptor(
   name='MmConfigGroups',
-  full_name='org.ratatosk.mmrest.data.MmConfigGroups',
+  full_name='org.mm_anywhere.data.MmConfigGroups',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='mmConfigGroups', full_name='org.ratatosk.mmrest.data.MmConfigGroups.mmConfigGroups', index=0,
+      name='mmConfigGroups', full_name='org.mm_anywhere.data.MmConfigGroups.mmConfigGroups', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -267,48 +267,48 @@ _MMCONFIGGROUPS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=579,
-  serialized_end=660,
+  serialized_start=563,
+  serialized_end=640,
 )
 
 
 _MMCONFIGGROUP = descriptor.Descriptor(
   name='MmConfigGroup',
-  full_name='org.ratatosk.mmrest.data.MmConfigGroup',
+  full_name='org.mm_anywhere.data.MmConfigGroup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='configGroupId', full_name='org.ratatosk.mmrest.data.MmConfigGroup.configGroupId', index=0,
+      name='configGroupId', full_name='org.mm_anywhere.data.MmConfigGroup.configGroupId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='configGroupLabel', full_name='org.ratatosk.mmrest.data.MmConfigGroup.configGroupLabel', index=1,
+      name='configGroupLabel', full_name='org.mm_anywhere.data.MmConfigGroup.configGroupLabel', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='configGroupPresets', full_name='org.ratatosk.mmrest.data.MmConfigGroup.configGroupPresets', index=2,
+      name='configGroupPresets', full_name='org.mm_anywhere.data.MmConfigGroup.configGroupPresets', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='currentPreset', full_name='org.ratatosk.mmrest.data.MmConfigGroup.currentPreset', index=3,
+      name='currentPreset', full_name='org.mm_anywhere.data.MmConfigGroup.currentPreset', index=3,
       number=4, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='configGroupUrl', full_name='org.ratatosk.mmrest.data.MmConfigGroup.configGroupUrl', index=4,
+      name='configGroupUrl', full_name='org.mm_anywhere.data.MmConfigGroup.configGroupUrl', index=4,
       number=5, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -323,48 +323,48 @@ _MMCONFIGGROUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=663,
-  serialized_end=849,
+  serialized_start=643,
+  serialized_end=825,
 )
 
 
 _MMCONFIGGROUPPRESET = descriptor.Descriptor(
   name='MmConfigGroupPreset',
-  full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset',
+  full_name='org.mm_anywhere.data.MmConfigGroupPreset',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='presetId', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetId', index=0,
+      name='presetId', full_name='org.mm_anywhere.data.MmConfigGroupPreset.presetId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetLabel', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetLabel', index=1,
+      name='presetLabel', full_name='org.mm_anywhere.data.MmConfigGroupPreset.presetLabel', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetPropertyDevices', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyDevices', index=2,
+      name='presetPropertyDevices', full_name='org.mm_anywhere.data.MmConfigGroupPreset.presetPropertyDevices', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetPropertyLabels', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyLabels', index=3,
+      name='presetPropertyLabels', full_name='org.mm_anywhere.data.MmConfigGroupPreset.presetPropertyLabels', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='presetPropertyValues', full_name='org.ratatosk.mmrest.data.MmConfigGroupPreset.presetPropertyValues', index=4,
+      name='presetPropertyValues', full_name='org.mm_anywhere.data.MmConfigGroupPreset.presetPropertyValues', index=4,
       number=5, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -379,8 +379,8 @@ _MMCONFIGGROUPPRESET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=852,
-  serialized_end=1003,
+  serialized_start=828,
+  serialized_end=979,
 )
 
 _MMDEVICESLISTING.fields_by_name['mmDeviceListings'].message_type = _MMDEVICELISTING
@@ -400,42 +400,42 @@ class MmDevicesListing(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMDEVICESLISTING
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDevicesListing)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmDevicesListing)
 
 class MmDeviceListing(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMDEVICELISTING
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceListing)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmDeviceListing)
 
 class MmDeviceProperty(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMDEVICEPROPERTY
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceProperty)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmDeviceProperty)
 
 class MmDeviceCommand(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMDEVICECOMMAND
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmDeviceCommand)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmDeviceCommand)
 
 class MmConfigGroups(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMCONFIGGROUPS
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroups)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmConfigGroups)
 
 class MmConfigGroup(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMCONFIGGROUP
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroup)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmConfigGroup)
 
 class MmConfigGroupPreset(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _MMCONFIGGROUPPRESET
   
-  # @@protoc_insertion_point(class_scope:org.ratatosk.mmrest.data.MmConfigGroupPreset)
+  # @@protoc_insertion_point(class_scope:org.mm_anywhere.data.MmConfigGroupPreset)
 
 # @@protoc_insertion_point(module_scope)

@@ -8,21 +8,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import mmcorej.CMMCore;
 
 import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.handler.DefaultHandler;
+import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.server.nio.SelectChannelConnector;
@@ -33,6 +40,7 @@ import org.micromanager.api.ScriptInterface;
 import org.micromanager.utils.MMFrame;
 import org.mm_anywhere.remoteio.MmAnywhereApplication;
 
+import com.sun.jersey.api.core.ClassNamesResourceConfig;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 
@@ -42,8 +50,11 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
  */
 public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 
-	public final static String MENU_NAME = "MMRest Plugin";
-	public final static String PREF_WWW_RESOURCE_PATH = "www-resource-path";
+  public static String menuName = "MmAnywhere Plugin";
+  public static String tooltipDescription = "Web enabled Micro-Manager";
+
+	public final static String MENU_NAME = "MmAnywhere Plugin";
+	public final static String PREF_WWW_HOSTING_DATA_PATH = "www-hosting-data-dir";
 	public final static String PREF_HOST_PATH = "host-path";
 	public final static String PREF_HOST_PORT = "host-port";
 	public final static String PREF_AUTO_START_SERVER = "auto-start-server";
@@ -58,14 +69,14 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 
 	private Server _webServer;
 
-	private JTextField _wwwResourcePathText;
+	private JTextField _wwwHostingDirectoryPathText;
 	private JTextField _hostPathText;
 	private JTextField _portText;
 	private JButton _startServerButton;
 	private JCheckBox _autoStartServerCheckBox;
 
 	protected int _port = 8080;
-	protected String _wwwResourcePath = "c:/Users/ajb/workspace-devalbo/mm-anywhere-plugin/www";
+	protected String _wwwHostingDataDirectoryPath = ".";
 	protected String _hostPath = "http://localhost";
 	protected boolean _autoStartServer;
 
@@ -82,7 +93,10 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 		setTitle("MM Anywhere");
 		final Preferences prefs = Preferences.userNodeForPackage(this.getClass());
 
-		_wwwResourcePath = prefs.get(MmAnywherePlugin.PREF_WWW_RESOURCE_PATH, "c:/Users/ajb/workspace-devalbo/mm-anywhere-plugin/www");
+		File userDirectory = new File(System.getProperty("user.home"));
+    File mmAnywhereDir = new File(userDirectory, ".mmanywhere");
+    
+		_wwwHostingDataDirectoryPath = prefs.get(MmAnywherePlugin.PREF_WWW_HOSTING_DATA_PATH, mmAnywhereDir.getAbsolutePath());
 		_hostPath = prefs.get(MmAnywherePlugin.PREF_HOST_PATH, "http://localhost");
 		_port = prefs.getInt(MmAnywherePlugin.PREF_HOST_PORT, 8080);
 		_autoStartServer = prefs.getBoolean(MmAnywherePlugin.PREF_AUTO_START_SERVER, false);
@@ -90,7 +104,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 		addWindowListener(new WindowAdapter() {
 
 			public void windowClosing(final WindowEvent e) {
-				_wwwResourcePath = _wwwResourcePathText.getText();
+				_wwwHostingDataDirectoryPath = _wwwHostingDirectoryPathText.getText();
 				_hostPath = _hostPathText.getText();
 				try {
 					_port = Integer.parseInt(_portText.getText());
@@ -99,7 +113,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 				}
 				_autoStartServer = _autoStartServerCheckBox.isSelected();
 				
-				prefs.put(MmAnywherePlugin.PREF_WWW_RESOURCE_PATH, _wwwResourcePath);
+				prefs.put(MmAnywherePlugin.PREF_WWW_HOSTING_DATA_PATH, _wwwHostingDataDirectoryPath);
 				prefs.put(MmAnywherePlugin.PREF_HOST_PATH, _hostPath);
 				prefs.putInt(MmAnywherePlugin.PREF_HOST_PORT, _port);
 				prefs.putBoolean(MmAnywherePlugin.PREF_AUTO_START_SERVER, _autoStartServer);
@@ -118,9 +132,9 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 
 		JPanel resourcePanel = new JPanel();
 		resourcePanel.setLayout(new BoxLayout(resourcePanel, BoxLayout.X_AXIS));
-		resourcePanel.add(new JLabel("WWW Resource Path:"));
-		_wwwResourcePathText = new JTextField(_wwwResourcePath); 
-		resourcePanel.add(_wwwResourcePathText);
+		resourcePanel.add(new JLabel("WWW Hosting Directory:"));
+		_wwwHostingDirectoryPathText = new JTextField(_wwwHostingDataDirectoryPath); 
+		resourcePanel.add(_wwwHostingDirectoryPathText);
 		dlgPanel.add(resourcePanel);
 		
 		JPanel hostPanel = new JPanel();
@@ -132,7 +146,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 		
 		JPanel portPanel = new JPanel(); 
 		portPanel.setLayout(new BoxLayout(portPanel, BoxLayout.X_AXIS));
-		portPanel.add(new JLabel("WWW Host Port:"));
+		portPanel.add(new JLabel("WWW Server Port:"));
 		_portText = new JTextField(Integer.toString(_port));
 		portPanel.add(_portText);
 		dlgPanel.add(portPanel);
@@ -208,7 +222,7 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 
 	private void startWebServer() {
 
-		MmAnywhereApplication.init(_wwwResourcePath, _hostPath + ":" + _port);
+		MmAnywhereApplication.init(_wwwHostingDataDirectoryPath, _hostPath + ":" + _port);
 		
 		_webServer = new Server();
 		SelectChannelConnector connector = new SelectChannelConnector();
@@ -216,21 +230,53 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 		_webServer.addConnector(connector);
 
 		ServletHolder sh = new ServletHolder(ServletContainer.class);
-		sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
-		sh.setInitParameter("com.sun.jersey.config.property.packages", "jetty");
-//		sh.setInitParameter("com.sun.jersey.config.property.packages", "org.ratatosk.mmrest;org.devalbo.data.jackson");
-		sh.setInitParameter("com.sun.jersey.config.property.packages", "org.mm_anywhere.app;org.mm_anywhere.remoteio;org.devalbo.data.jackson");
+//		sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", 
+//				PackagesResourceConfig.class.getCanonicalName());
+//		sh.setInitParameter(PackagesResourceConfig.PROPERTY_PACKAGES, 
+//				"org.mm_anywhere.app;org.mm_anywhere.remoteio.resources");
+		
+		sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", 
+				ClassNamesResourceConfig.class.getCanonicalName());
+		sh.setInitParameter(ClassNamesResourceConfig.PROPERTY_CLASSNAMES, 
+			  "org.mm_anywhere.app.UiResource;" +
+			  "org.mm_anywhere.remoteio.resources.Devices;" +
+			  "org.mm_anywhere.remoteio.resources.Core;" +
+			  "org.mm_anywhere.remoteio.resources.Configuration;" +
+			  "org.mm_anywhere.remoteio.resources.CmdSnapImage;" +
+			  "org.mm_anywhere.app.VelocityResolver;" +
+//			  "org.mm_anywhere.app.ProtobufWriter;" +
+			  "org.mm_anywhere.app.MmAnywhereCoreResolver;"
+//			  "org.mm_anywhere.app.ProtobufReader;"
+				);
+
+		
+//	sh.setInitParameter("com.sun.jersey.config.property.packages", 
+//			"jetty");
+
 		ServletContextHandler jerseyContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		jerseyContext.addServlet(sh, "/mm/*");
-
+		
 		ResourceHandler resource_handler = new ResourceHandler();
-		resource_handler.setDirectoriesListed(true);
-		resource_handler.setResourceBase(_wwwResourcePath);
+//		resource_handler.setDirectoriesListed(true);
+		resource_handler.setResourceBase(_wwwHostingDataDirectoryPath);
 		resource_handler.setDirectoriesListed(false);
-		resource_handler.setWelcomeFiles(new String[]{ "index.html" });
+//		resource_handler.setWelcomeFiles(new String[]{ "index.html" });
 
+		AbstractHandler defaultHandler = new AbstractHandler() {
+			
+			@Override
+			public void handle(String target, Request baseRequest,
+			    HttpServletRequest request, HttpServletResponse response)
+			    throws IOException, ServletException 
+	    {
+				response.encodeRedirectURL("/mm/ui/acquisition");
+				baseRequest.setHandled(true);
+			}
+		};
+		
 		HandlerList handlers = new HandlerList();
-		handlers.setHandlers(new Handler[] { resource_handler, jerseyContext, new DefaultHandler() });
+//		handlers.setHandlers(new Handler[] { resource_handler, jerseyContext, new DefaultHandler() });
+		handlers.setHandlers(new Handler[] { jerseyContext, resource_handler, defaultHandler });
 		_webServer.setHandler(handlers);
 
 		try {
@@ -240,8 +286,19 @@ public class MmAnywherePlugin extends MMFrame implements MMPlugin {
 			_startServerButton.setActionCommand(CMD_STOP_SERVER);
 			
 		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
+			for (StackTraceElement ste : e.getStackTrace()) {
+				JOptionPane.showMessageDialog(null, ste);
+			}
 			e.printStackTrace();
 		}
+		
+		try {
+	    sh.getServlet();
+    } catch (ServletException e1) {
+	    // TODO Auto-generated catch block
+	    e1.printStackTrace();
+    }
 
 	}
 

@@ -16,12 +16,12 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.MessageBodyReader;
 import javax.ws.rs.ext.Provider;
 
-import org.ratatosk.mmrest.data.MmAnywhere.MmDevicesListing;
+import org.mm_anywhere.data.MmAnywhere.MmDevicesListing;
 
 import com.google.protobuf.GeneratedMessage.Builder;
-import com.google.protobuf.JsonFormat;
 import com.google.protobuf.Message;
-import com.google.protobuf.XmlFormat;
+//import com.googlecode.protobuf.format.JsonFormat;
+//import com.googlecode.protobuf.format.XmlFormat;
 
 /**
  *
@@ -67,13 +67,13 @@ public class ProtobufReader implements MessageBodyReader<Message>{
       if (MediaType.APPLICATION_JSON_TYPE.isCompatible(mediaType)) {
         String data = toStringBuilder(new InputStreamReader(entityStream)).toString();
         System.out.println("Data from client: " + data);
-        JsonFormat.merge(data, builder);
+//        JsonFormat.merge(data, builder);
 
       } else if (XPROTO_TYPE.isCompatible(mediaType)) {
         builder.mergeFrom(entityStream);
 
       } else if (MediaType.APPLICATION_XML_TYPE.isCompatible(mediaType)) {
-        XmlFormat.merge(new InputStreamReader(entityStream), builder);
+//        XmlFormat.merge(new InputStreamReader(entityStream), builder);
 
       } else {
         inputOk = false;

@@ -1,123 +1,122 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns='http://www.w3.org/1999/xhtml' >
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
-    <script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
-    <script src="/mm/ui/js/bootstrap.js"></script>
-    <script>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="/mm/ui/css/bootstrap.css">
+		<script type="text/javascript" src="/mm/ui/js/jquery-1.7.2.min.js"></script>
+		<script src="/mm/ui/js/bootstrap.js"></script>
+		<script>
     var serverUrl = "$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()";
     </script>
-    <script src="/mm/ui/js/acquisition.js"></script>
-    <title>MMAnywhere - Acquisition</title>
-  </head>
+		<script src="/mm/ui/js/acquisition.js"></script>
+		<title>MMAnywhere - Acquisition</title>
+</head>
 
-  <body>
-    #include("/org/mm_anywhere/ui/header.vm")
-    
-    <div class="container" id="content">
-      <header class="jumbotron subhead" id="overview">
-        <h1>Acquisition</h1>
-      </header>
-      
-      <div class="container-fluid">
-			  <div class="row-fluid">
-			    <div class="span3">
-						<form class="form-inline well">
-						  <fieldset>
-						    <legend>Camera Control</legend>
-                <div class="control-group">
-	                <button class="btn btn-primary btn-large" id="btn-snap-image">Snap</button>
-                  <button class="btn btn-large" id="btn-live-image" data-toggle="button">Live (Alpha)</button>
-                </div>
-						    <div class="control-group">
-						      <label class="control-label" for="exposure-ms">Exposure [ms]</label>
-						      <div class="controls">
-						        <input type="text" class="input-mini" id="exposure-ms" value="$mmAnywhereAppCore.getExposure()"></input>
-						      </div>
-						    </div>
-                <div class="control-group">
-                  <label class="control-label" for="binning">Binning</label>
-                  <div class="controls">
-	                  <select id="binning" class="input-mini">
-                      #foreach( $allowedBinValue in $mmAnywhereAppCore.getAllowedBinningValues() )
-			                  #if( $allowedBinValue.equals($mmAnywhereAppCore.getBinning()) )
-                          <option selected="selected">$allowedBinValue</option>
-			                  #else
-                          <option>$allowedBinValue</option>
-			                  #end
-		                  #end
-			              </select>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="active-shutter">Shutter</label>
-                  <div class="controls">
-                    <select id="active-shutter" class="input-medium">
-                      #foreach( $availableShutter in $mmAnywhereAppCore.getAvailableShutters() )
-                        #if( $availableShutter.equals($mmAnywhereAppCore.getShutter()) )
-                          <option selected="selected">$availableShutter</option>
-                        #else
-                          <option>$availableShutter</option>
-                        #end
-                      #end
-                    </select>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="checkbox">
-                  #if( $mmAnywhereAppCore.getAutoShutter() )
-                    <input type="checkbox" id="auto-shutter" checked="checked"/> Auto shutter
-                  #else
-                    <input type="checkbox" id="auto-shutter"/> Auto shutter
-                  #end
-                  </label>
-                  
-                  #if( $mmAnywhereAppCore.getShutterOpen() )
-                    <button class="btn btn-info" id="open-shutter">Close</button>
-                  #else
-                    <button class="btn btn-info" id="open-shutter">Open</button>
-                  #end
-                </div>
-						  </fieldset>
-						</form>
-						
-            <form class="form-inline well">
-              <fieldset>
-                <legend>Config Presets</legend>
-                
-                #foreach( $cfg in $configurations )
-                <div class="control-group">
-<!--                   <label class="control-label" for="cfg-$foreach.count">$cfg.getConfigGroupLabel()</label> -->
-				          <h3>$cfg.getConfigGroupLabel()</h3>
-                  <div class="controls">
-	                  <div class="btn-group" id="cfg-$foreach.count">
-	                    <button class="btn">$cfg.getCurrentPreset()</button>
-	                    <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-					            <ul class="dropdown-menu">
-					              #foreach( $preset in $cfg.getConfigGroupPresetsList() )
-					                <li><a href="$cfg.getConfigGroupUrl()" class="activate-preset" id="$preset.getPresetId()">$preset.getPresetLabel()</a></li>
-					              #end
-					            </ul>
-	                  </div>
-                  </div>
-                </div>
-                #end
+<body>
+	#include("/org/mm_anywhere/ui/header.vm")
 
-              </fieldset>
-            </form>
-			    </div>
-			    
-			    <div class="span8" id="acq-image-div">
-			      <!--Body content-->
-			      <img id="acq-image" src="/mm/ui/img/MMAnywhere.png"></img>
-			    </div>
-			  </div>
+	<div class="container" id="content">
+		<header class="jumbotron subhead" id="overview">
+		<h1>Acquisition</h1>
+		</header>
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<form class="form-inline well">
+						<fieldset>
+							<legend>Camera Control</legend>
+							<div class="control-group">
+								<button class="btn btn-primary btn-large" id="btn-snap-image">Snap</button>
+								<button class="btn btn-large" id="btn-live-image"
+									data-toggle="button">Live (Alpha)</button>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="exposure-ms">Exposure
+									[ms]</label>
+								<div class="controls">
+									<input type="text" class="input-mini" id="exposure-ms"
+										value="$mmAnywhereAppCore.getExposure()"></input>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="binning">Binning</label>
+								<div class="controls">
+									<select id="binning" class="input-mini"> #foreach(
+										$allowedBinValue in
+										$mmAnywhereAppCore.getAllowedBinningValues() ) #if(
+										$allowedBinValue.equals($mmAnywhereAppCore.getBinning()) )
+										<option selected="selected">$allowedBinValue</option> #else
+										<option>$allowedBinValue</option> #end #end
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="active-shutter">Shutter</label>
+								<div class="controls">
+									<select id="active-shutter" class="input-medium">
+										#foreach( $availableShutter in
+										$mmAnywhereAppCore.getAvailableShutters() ) #if(
+										$availableShutter.equals($mmAnywhereAppCore.getShutter()) )
+										<option selected="selected">$availableShutter</option> #else
+										<option>$availableShutter</option> #end #end
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="checkbox"> #if(
+									$mmAnywhereAppCore.getAutoShutter() ) <input type="checkbox"
+									id="auto-shutter" checked="checked" /> Auto shutter #else <input
+									type="checkbox" id="auto-shutter" /> Auto shutter #end </label> #if(
+								$mmAnywhereAppCore.getShutterOpen() )
+								<button class="btn btn-info" id="open-shutter">Close</button>
+								#else
+								<button class="btn btn-info" id="open-shutter">Open</button>
+								#end
+							</div>
+						</fieldset>
+					</form>
+
+					<form class="form-inline well">
+						<fieldset>
+							<legend>Config Presets</legend>
+
+							#foreach( $cfg in $configurations )
+							<div class="control-group">
+								<!--                   <label class="control-label" for="cfg-$foreach.count">$cfg.getConfigGroupLabel()</label> -->
+								<h3>$cfg.getConfigGroupLabel()</h3>
+								<div class="controls">
+									<div class="btn-group" id="cfg-$foreach.count">
+										<button class="btn">$cfg.getCurrentPreset()</button>
+										<button class="btn dropdown-toggle" data-toggle="dropdown">
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											#foreach( $preset in $cfg.getConfigGroupPresetsList() )
+											<li><a href="$cfg.getConfigGroupUrl()"
+												class="activate-preset" id="$preset.getPresetId()">$preset.getPresetLabel()</a>
+											</li> #end
+										</ul>
+									</div>
+								</div>
+							</div>
+							#end
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="span8" id="acq-image-div">
+					<!--Body content-->
+					<img id="acq-image" src="/mm/ui/img/MMAnywhere.png"></img>
+				</div>
 			</div>
-    
-    </div>  <!-- end #container -->
-        
-    <script>
+		</div>
+
+	</div>
+	<!-- end #container -->
+
+	<script>
     $("#btn-snap-image").click(function (event) {
         event.preventDefault();
         runningLive = false;
@@ -140,7 +139,7 @@
     registerEnterKey("#exposure-ms");
     $('#exposure-ms').blur(function() {
       exposure = $(this).val();
-    	$.post('$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/exposure',
+    	$.post("$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/exposure",
     			{"exposure" : exposure},
     			function (data) {
     				  $('#exposure-ms').val(data);
@@ -151,7 +150,7 @@
     registerEnterKey("#binning");
     $("#binning").change(function () {
         var binning = $(this).val();
-        $.post('$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/binning',
+        $.post("$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/binning",
             {"binning" : binning},
             function (data) {
                 $('#binning').val(data);
@@ -162,7 +161,7 @@
     registerEnterKey("#active-shutter");
     $("#active-shutter").change(function () {
         var shutter = $(this).val();
-        $.post('$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/active-shutter',
+        $.post("$mmAnywhereAppCore.getMmAnywhereAppCoreUrl()/active-shutter",
             {"active-shutter" : shutter},
             function (data) {
                 $('#active-shutter').val(data);
@@ -214,6 +213,6 @@
 
       });
     </script>
-    
-  </body>
+
+</body>
 </html>

@@ -1,5 +1,7 @@
 
-package org.ratatosk.mmrest.data;
+package org.mm_anywhere.data;
+
+option optimize_for = SPEED;
 
 enum MmPropertyTypes {
   UNDEFINED = 0;

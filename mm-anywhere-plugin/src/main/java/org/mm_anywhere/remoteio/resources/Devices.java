@@ -11,9 +11,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
 import org.mm_anywhere.app.MmDevalboConverter;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceListing;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDeviceProperty;
-import org.ratatosk.mmrest.data.MmAnywhere.MmDevicesListing;
+import org.mm_anywhere.data.MmAnywhere.MmDeviceListing;
+import org.mm_anywhere.data.MmAnywhere.MmDeviceProperty;
+import org.mm_anywhere.data.MmAnywhere.MmDevicesListing;
 
 /**
  * @author ajb

@@ -6,13 +6,14 @@ import com.sun.research.ws.wadl.Application;
 
 public class MmAnywhereApplication extends Application {
 
-	private String _staticDirRoot;
-	private String _staticHostingRoot;
+	private String _hostingDirRoot;
+	private String _staticHostingUrlRoot;
 	private static MmAnywhereApplication _app;
 
 	public MmAnywhereApplication(String staticDir, String hostingPath) {
-		_staticDirRoot = staticDir;
-		_staticHostingRoot = hostingPath;
+		_hostingDirRoot = staticDir;
+		_staticHostingUrlRoot = hostingPath;
+		initStaticDirs();
 	}
 
 	public static void init(String staticDirRoot, String staticHostingRoot) {
@@ -24,23 +25,23 @@ public class MmAnywhereApplication extends Application {
 	}
 
 	public String getStaticDirRoot() {
-		return _staticDirRoot;
+		return _hostingDirRoot;
 	}
 
 	public String getImagesDir() {
-		return _staticDirRoot + "/images/";
+		return _hostingDirRoot + "/images/";
 	}
 
 	public String getVideosDir() {
-		return _staticDirRoot + "/videos/";
+		return _hostingDirRoot + "/videos/";
 	}
 
 	public String getImagesHostingRoot() {
-		return _staticHostingRoot + "/images/";
+		return _staticHostingUrlRoot + "/images/";
 	}
 
 	public String getVideosHostingRoot() {
-		return _staticHostingRoot + "/videos/";
+		return _staticHostingUrlRoot + "/videos/";
 	}
 
 	public void initStaticDirs() {

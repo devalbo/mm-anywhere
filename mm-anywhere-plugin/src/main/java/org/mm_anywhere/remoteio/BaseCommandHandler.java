@@ -3,24 +3,9 @@
  */
 package org.mm_anywhere.remoteio;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathFactory;
-
 import mmcorej.CMMCore;
 
 import org.mm_anywhere.app.MmAnywherePlugin;
-import org.mm_anywhere.app.MmCoreUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 
 /**
  * @author ajb

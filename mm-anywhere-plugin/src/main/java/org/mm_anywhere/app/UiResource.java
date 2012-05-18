@@ -9,9 +9,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 
-import mmcorej.CMMCore;
-
-import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -32,12 +29,6 @@ public class UiResource {
 	@GET
 	@Path("/devices")
 	public String getDevicesUi() {
-		Logger log = Logger.getLogger(LOGGER_NAME);
-		if (velocity != null) {
-			log.info("Found Velocity Engine");
-		} else {
-			log.error("Velocity Engine not found");
-		}
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
@@ -55,12 +46,6 @@ public class UiResource {
 	@GET
 	@Path("/configurations")
 	public String getConfigurationUi() {
-		Logger log = Logger.getLogger(LOGGER_NAME);
-		if (velocity != null) {
-			log.info("Found Velocity Engine");
-		} else {
-			log.error("Velocity Engine not found");
-		}
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {
@@ -78,12 +63,6 @@ public class UiResource {
 	@GET
 	@Path("/acquisition")
 	public String getAcquisitionUi() {
-		Logger log = Logger.getLogger(LOGGER_NAME);
-		if (velocity != null) {
-			log.info("Found Velocity Engine");
-		} else {
-			log.error("Velocity Engine not found");
-		}
 		VelocityContext context = new VelocityContext();
 		StringWriter sw = null;
 		try {

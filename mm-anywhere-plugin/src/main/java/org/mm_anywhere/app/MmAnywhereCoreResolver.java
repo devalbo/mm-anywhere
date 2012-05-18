@@ -5,9 +5,6 @@ import java.lang.reflect.Type;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.ext.Provider;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-
 import com.sun.jersey.core.spi.component.ComponentContext;
 import com.sun.jersey.core.spi.component.ComponentScope;
 import com.sun.jersey.spi.inject.Injectable;
@@ -24,10 +21,8 @@ public class MmAnywhereCoreResolver implements InjectableProvider<Context, Type>
 		if (c.equals(MmAnywhereAppCore.class)) {
 			return new Injectable<MmAnywhereAppCore>() {
 				public MmAnywhereAppCore getValue() {
-					BasicConfigurator.configure();
-					Logger log = Logger.getLogger(LOGGER_NAME);
 					if (mmCore == null) {
-						log.info("Getting MmCore");
+						System.out.println("Getting MmCore");
 						mmCore = MmAnywherePlugin.getMmAnywhereAppCore();
 					}
 					return mmCore;

@@ -42,10 +42,11 @@
              <thead><tr><th><h4>$preset.getPresetLabel()</h4></th><th>Device</th><th>Property</th><th>Current Value</th></tr></thead>
              #foreach( $propLabel in $preset.getPresetPropertyLabelsList() )
               <tr>
-              <td>$foreach.count</td>
-              <td>$preset.getPresetPropertyDevices($foreach.index)</td>
-              <td>$preset.getPresetPropertyLabels($foreach.index)</td>
-              <td>$preset.getPresetPropertyValues($foreach.index)</td>
+	              <td>$foreach.count</td>
+	              <td>$preset.getPresetPropertyDevices($foreach.index)</td>
+<!-- 	              <td>$preset.getPresetPropertyLabels($foreach.index)</td> -->
+                <td>$propLabel</td>
+	              <td>$preset.getPresetPropertyValues($foreach.index)</td>
               </tr>              
             #end
            </table>
